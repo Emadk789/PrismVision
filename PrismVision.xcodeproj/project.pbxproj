@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		695378A42537613D005942D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A32537613D005942D0 /* AppDelegate.swift */; };
 		695378A62537613D005942D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A52537613D005942D0 /* SceneDelegate.swift */; };
-		695378A82537613D005942D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A72537613D005942D0 /* ViewController.swift */; };
+		695378A82537613D005942D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A72537613D005942D0 /* HomeViewController.swift */; };
 		695378AB2537613D005942D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695378A92537613D005942D0 /* Main.storyboard */; };
 		695378AD25376145005942D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695378AC25376145005942D0 /* Assets.xcassets */; };
 		695378B025376145005942D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695378AE25376145005942D0 /* LaunchScreen.storyboard */; };
+		695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378B925377D8C005942D0 /* CustomCameraControler.swift */; };
+		695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378BC25377DE4005942D0 /* PhotoPreviewView.swift */; };
+		695378C725378F54005942D0 /* PrisimVision3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 695378C625378F53005942D0 /* PrisimVision3.mlmodel */; };
+		695378CB2537A8FE005942D0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378CA2537A8FE005942D0 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		695378A02537613D005942D0 /* PrismVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrismVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695378A32537613D005942D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695378A52537613D005942D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		695378A72537613D005942D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		695378A72537613D005942D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		695378AA2537613D005942D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		695378AC25376145005942D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695378AF25376145005942D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695378B125376145005942D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		695378B925377D8C005942D0 /* CustomCameraControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraControler.swift; sourceTree = "<group>"; };
+		695378BC25377DE4005942D0 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		695378C625378F53005942D0 /* PrisimVision3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision3.mlmodel; sourceTree = "<group>"; };
+		695378CA2537A8FE005942D0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				695378A32537613D005942D0 /* AppDelegate.swift */,
 				695378A52537613D005942D0 /* SceneDelegate.swift */,
-				695378A72537613D005942D0 /* ViewController.swift */,
+				695378A72537613D005942D0 /* HomeViewController.swift */,
+				695378B925377D8C005942D0 /* CustomCameraControler.swift */,
 				695378A92537613D005942D0 /* Main.storyboard */,
 				695378AC25376145005942D0 /* Assets.xcassets */,
 				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
 				695378B125376145005942D0 /* Info.plist */,
+				695378C625378F53005942D0 /* PrisimVision3.mlmodel */,
+				695378BC25377DE4005942D0 /* PhotoPreviewView.swift */,
+				695378CA2537A8FE005942D0 /* ImageViewController.swift */,
 			);
 			path = PrismVision;
 			sourceTree = "<group>";
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				695378A82537613D005942D0 /* ViewController.swift in Sources */,
+				695378A82537613D005942D0 /* HomeViewController.swift in Sources */,
 				695378A42537613D005942D0 /* AppDelegate.swift in Sources */,
+				695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */,
+				695378CB2537A8FE005942D0 /* ImageViewController.swift in Sources */,
+				695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */,
+				695378C725378F54005942D0 /* PrisimVision3.mlmodel in Sources */,
 				695378A62537613D005942D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
