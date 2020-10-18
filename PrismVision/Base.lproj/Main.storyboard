@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mll-tH-UMw">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PrismVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xN-ws-4aO">
-                                <rect key="frame" x="152.66666666666666" y="629" width="70" height="70"/>
+                                <rect key="frame" x="152.5" y="518" width="70" height="70"/>
                                 <state key="normal" image="CameraButton2"/>
                                 <connections>
                                     <action selector="cameraButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQa-zm-UBm"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraButton" translatesAutoresizingMaskIntoConstraints="NO" id="qru-uR-9bR">
-                                <rect key="frame" x="172.66666666666666" y="391" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="I84-XN-JLi"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-zk-zrr">
-                                <rect key="frame" x="166.66666666666666" y="708" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="597" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,6 +58,8 @@
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
                         <outlet property="label" destination="Gq5-zk-zrr" id="CCE-ar-BiV"/>
                         <outlet property="pointer" destination="qru-uR-9bR" id="qKy-bk-l7D"/>
+                        <outlet property="pointerCenterX" destination="rLn-Ox-q1v" id="cWR-jr-myR"/>
+                        <outlet property="pointerCenterY" destination="LCm-cR-vqn" id="tZN-FA-fsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,7 +97,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="HaT-xx-tt0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jwp-NS-oe4">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -112,11 +114,11 @@
             <objects>
                 <viewController storyboardIdentifier="Preview" id="ckv-cF-s7q" customClass="PhotoPreviewView" customModule="PrismVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ld4-Un-t6c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-2w-Rib">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BwT-L0-kFf"/>
@@ -141,11 +143,11 @@
             <objects>
                 <viewController id="a3f-MA-dqG" customClass="ImageViewController" customModule="PrismVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K8P-Dd-wBH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="odW-bx-i2t">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Rpz-nj-mhA"/>
                                 </constraints>
@@ -159,14 +161,14 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v91-QE-hHN">
-                                <rect key="frame" x="175" y="88" width="200" height="100"/>
+                                <rect key="frame" x="175" y="44" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QU8-Pm-fyk"/>
                                     <constraint firstAttribute="height" constant="100" id="TFq-BT-xCl"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-aY-nwb">
-                                <rect key="frame" x="67.666666666666686" y="569" width="240" height="160"/>
+                                <rect key="frame" x="67.5" y="458" width="240" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jct-cf-75L">
                                         <rect key="frame" x="0.0" y="8" width="240" height="58"/>
@@ -220,7 +222,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Wvb-iM-AsX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kU8-uf-Hv6">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -234,7 +236,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CameraButton" width="36" height="36"/>
+        <image name="CameraButton" width="72" height="72"/>
         <image name="CameraButton2" width="70" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

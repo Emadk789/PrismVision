@@ -21,7 +21,12 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var output: AVCapturePhotoOutput?;
     var previewLayer: AVCaptureVideoPreviewLayer?;
     var photoOutput = AVCapturePhotoOutput();
+    var tempPointerLocation: CGPoint!;
     
+    var request: VNCoreMLRequest!;
+    
+    @IBOutlet weak var pointerCenterY: NSLayoutConstraint!
+    @IBOutlet weak var pointerCenterX: NSLayoutConstraint!
     @IBOutlet weak var cameraButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,23 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         cameraButton.layer.zPosition = 1;
         pointer.layer.zPosition = 1;
         label.layer.zPosition = 1;
+        print("pointerLocation0", self.pointer.center);
         
+        request = setUp();
+        
+        print("PointerCosntrinats", cameraView.constraints)
+        pointer.center = CGPoint(x: 300, y: 600)
+//        cameraView.removeConstraint(pointerCenterY);
+//        cameraView.removeConstraint(pointerCenterX);
+//        print("PointerCosntrinats", cameraView.constraints)
+        
+        
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        pointer.center = CGPoint(x: 300, y: 600)
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
@@ -52,19 +73,32 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
       let translation = gesture.translation(in: view)
 
       // 2
-      guard let gestureView = gesture.view else {
+        guard let gestureView = pointer else {
         return
       }
+        if gesture.state == .ended {
+            let photoSettings = AVCapturePhotoSettings();
+            photoOutput.capturePhoto(with: photoSettings, delegate: self);
+            tempPointerLocation = pointer.center;
+        }
 
-      gestureView.center = CGPoint(
-        x: gestureView.center.x + translation.x,
-        y: gestureView.center.y + translation.y
-      )
+//      gestureView.center = CGPoint(
+//        x: gestureView.center.x + translation.x,
+//        y: gestureView.center.y + translation.y
+//      )
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
         
-        print("Height, \(gestureView.bounds.height). Width, \(gestureView.bounds.width)");
+        print("handlePen","Height, \(gestureView.bounds.height). Width, \(gestureView.bounds.width)");
         print(gestureView.center);
+        
       // 3
       gesture.setTranslation(.zero, in: view)
+        
+        
+        
     }
     
 }
@@ -76,6 +110,7 @@ extension HomeViewController {
 
         let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
             self?.processClassifications(for: request, error: error)
+            
         })
 //        request.imageCropAndScaleOption = .centerCrop
         return request
@@ -85,6 +120,12 @@ extension HomeViewController {
             let handler = VNImageRequestHandler(ciImage: ciImage)
             do {
                 try handler.perform([classificationRequest])
+//                DispatchQueue.main.async {
+//                    guard let location = self.tempPointerLocation else { return }
+//                    self.pointer.center = location;
+//                    print("pointerLocation3", self.tempPointerLocation);
+//                }
+                
             } catch {
                 /*
                  This handler catches general image processing errors. The `classificationRequest`'s
@@ -96,7 +137,7 @@ extension HomeViewController {
         }
     }
     func processClassifications(for request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
+//
             var classificationLabel = "";
             guard let results = request.results else {
                 classificationLabel = "Unable to classify image.\n\(error!.localizedDescription)"
@@ -105,13 +146,68 @@ extension HomeViewController {
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
             let classifications = results as! [VNClassificationObservation];
             let value = classifications.first?.identifier;
-            let confidence = ((classifications.first?.confidence)! as Float) * 100;
-            self.label.text = "Color: \(value!), Confidence: \(confidence) "
+        let confidence = ((classifications.first?.confidence)! as Float) * 100;
+//        print("pointerLocation", pointer.center);
+        DispatchQueue.main.async {
+            self.label.text = "Color: \(value!), Confidence: \(confidence) ";
             print(value!, confidence);
         }
-        
+//        correctPointerLocation();
     }
+//    func correctPointerLocation() {
+//        DispatchQueue.main.async {
+//            print("pointerLocation2", self.pointer.center);
+//        }
+//    }
+    func runVisionRequest2(ciImage: CIImage, classificationRequest: VNCoreMLRequest, completionHandler: @escaping () -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage)
+            do {
+                try handler.perform([classificationRequest])
+                completionHandler();
+//                DispatchQueue.main.async {
+//                    guard let location = self.tempPointerLocation else { return }
+//                    self.pointer.center = location;
+//                    print("pointerLocation3", self.tempPointerLocation);
+//                }
+                
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
+    func processClassifications2(for request: VNRequest, error: Error?, completionHandler: @escaping () -> Void) {
+    //
+            var classificationLabel = "";
+            guard let results = request.results else {
+                classificationLabel = "Unable to classify image.\n\(error!.localizedDescription)"
+                return
+            }
+            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+            let classifications = results as! [VNClassificationObservation];
+            let value = classifications.first?.identifier;
+        let confidence = ((classifications.first?.confidence)! as Float) * 100;
+    //        print("pointerLocation", pointer.center);
+        DispatchQueue.main.async {
+            self.label.text = "Color: \(value!), Confidence: \(confidence) ";
+            print(value!, confidence);
+            completionHandler();
+        }
+    //        correctPointerLocation();
+    }
+    //    func correctPointerLocation() {
+    //        DispatchQueue.main.async {
+    //            print("pointerLocation2", self.pointer.center);
+    //        }
+    //    }
+
 }
+
 
 // MARK:- AVFoundation
 extension HomeViewController {
@@ -210,7 +306,7 @@ extension HomeViewController {
         let previewImage = UIImage(data: imageData)
         
         
-        let request = setUp();
+        
 //        let cImage = CIImage(image: previewImage!)!;
 //        runVisionRequest(ciImage: cImage, classificationRequest: request);
 //        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
@@ -227,6 +323,8 @@ extension HomeViewController {
         print(previewImage?.size.width, previewImage?.size.height);
         print("Screen Size:", view.bounds.width, view.bounds.height)
         print("ResisedImage:", resizedImage.size.width, resizedImage.size.height)
+        let extetionResizedImage = previewImage!.resizeImage(targetSize: CGSize(width: view.bounds.height, height: view.bounds.height));
+        print("ExtesnionResisedImage:", extetionResizedImage.size.width, extetionResizedImage.size.height);
 //        let rect2 = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
 //        let croppedImage = previewImage?.crop(rect: <#T##CGRect#>)
         let pointerYLocation = pointer.center.y;
@@ -240,13 +338,22 @@ extension HomeViewController {
 //        let anotherResise = resizeImage(image: resizedImage, targetSize: CGSize()
         let newImage = resizedImage.crop(rect: rect);
         
-        let cImage = CIImage(image: resizedImage)!;
-        runVisionRequest(ciImage: cImage, classificationRequest: request);
+        let cImage = CIImage(image: newImage)!;
+//        runVisionRequest(ciImage: cImage, classificationRequest: request);
+        runVisionRequest2(ciImage: cImage, classificationRequest: request) {
+            guard let location = self.tempPointerLocation else { return }
+            DispatchQueue.main.async {
+                //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
+                self.pointer.frame.origin = location;
+                print("pointerLocation3", self.tempPointerLocation);
+            }
+            
+        }
         
-                let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
-                vc.image = newImage;
-
-                present(vc, animated: true, completion: nil);
+//                let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
+//                vc.image = newImage;
+//
+//                present(vc, animated: true, completion: nil);
         
     }
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
