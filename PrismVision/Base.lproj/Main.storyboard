@@ -23,7 +23,26 @@
                                     <action selector="cameraButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQa-zm-UBm"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraButton" translatesAutoresizingMaskIntoConstraints="NO" id="qru-uR-9bR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-zk-zrr">
+                                <rect key="frame" x="166.5" y="597" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXg-UW-nvP">
+                                <rect key="frame" x="327" y="60" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kXg-UW-nvP" secondAttribute="height" multiplier="1:1" id="ZoR-Bd-nUJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="bcT-tN-exg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="flash"/>
+                                <connections>
+                                    <action selector="flashButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Juw-xr-8DT"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CameraButton" translatesAutoresizingMaskIntoConstraints="NO" id="qru-uR-9bR">
                                 <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -34,21 +53,15 @@
                                     <outletCollection property="gestureRecognizers" destination="FPS-XR-dbu" appends="YES" id="TF7-ez-S5V"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-zk-zrr">
-                                <rect key="frame" x="166.5" y="597" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kXg-UW-nvP" secondAttribute="trailing" constant="8" id="10S-xz-Xv5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gq5-zk-zrr" secondAttribute="bottom" id="BZW-Rl-jX3"/>
-                            <constraint firstItem="qru-uR-9bR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LCm-cR-vqn"/>
+                            <constraint firstItem="kXg-UW-nvP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="G3S-eu-n19"/>
                             <constraint firstItem="Gq5-zk-zrr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dbE-cm-bc4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xN-ws-4aO" secondAttribute="bottom" constant="30" id="iNp-A6-V4L"/>
-                            <constraint firstItem="qru-uR-9bR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rLn-Ox-q1v"/>
                             <constraint firstItem="7xN-ws-4aO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xHk-0Y-fa0"/>
                         </constraints>
                     </view>
@@ -56,10 +69,9 @@
                     <connections>
                         <outlet property="cameraButton" destination="7xN-ws-4aO" id="5Hm-lg-jzv"/>
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
+                        <outlet property="flashButton" destination="kXg-UW-nvP" id="wNc-5J-UEr"/>
                         <outlet property="label" destination="Gq5-zk-zrr" id="CCE-ar-BiV"/>
                         <outlet property="pointer" destination="qru-uR-9bR" id="qKy-bk-l7D"/>
-                        <outlet property="pointerCenterX" destination="rLn-Ox-q1v" id="cWR-jr-myR"/>
-                        <outlet property="pointerCenterY" destination="LCm-cR-vqn" id="tZN-FA-fsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,7 +81,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1557.5999999999999" y="103.89805097451276"/>
+            <point key="canvasLocation" x="1556.521739130435" y="103.79464285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zUp-2a-4qF">
@@ -234,10 +246,54 @@
             </objects>
             <point key="canvasLocation" x="857" y="859"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="dme-eW-6qR">
+            <objects>
+                <viewController id="kCK-O4-RQA" customClass="TestViewController" customModule="PrismVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTp-iO-6p2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="573-aY-09P">
+                                <rect key="frame" x="164" y="607" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button2Clicked:" destination="kCK-O4-RQA" eventType="touchUpInside" id="WE0-vV-J6a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LF-C3-fat">
+                                <rect key="frame" x="164.5" y="100" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="DeK-xr-Bfk"/>
+                                    <constraint firstAttribute="height" constant="30" id="pAy-r5-RDI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ahP-HU-aIY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="573-aY-09P" firstAttribute="leading" secondItem="ahP-HU-aIY" secondAttribute="leading" constant="164" id="6qY-cT-zPk"/>
+                            <constraint firstItem="ahP-HU-aIY" firstAttribute="trailing" secondItem="573-aY-09P" secondAttribute="trailing" constant="165" id="DKg-OU-QlZ"/>
+                            <constraint firstItem="ahP-HU-aIY" firstAttribute="bottom" secondItem="573-aY-09P" secondAttribute="bottom" constant="30" id="i1c-Ae-DRG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="5LF-C3-fat" id="ZSV-nz-08X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxi-xN-Hbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="1505"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CameraButton" width="72" height="72"/>
         <image name="CameraButton2" width="70" height="70"/>
+        <image name="flash" width="50" height="50"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69147A5C253C2840003C1A67 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69147A5B253C283F003C1A67 /* TestViewController.swift */; };
 		695378A42537613D005942D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A32537613D005942D0 /* AppDelegate.swift */; };
 		695378A62537613D005942D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A52537613D005942D0 /* SceneDelegate.swift */; };
 		695378A82537613D005942D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A72537613D005942D0 /* HomeViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69147A5B253C283F003C1A67 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		695378A02537613D005942D0 /* PrismVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrismVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695378A32537613D005942D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695378A52537613D005942D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				695378A72537613D005942D0 /* HomeViewController.swift */,
 				695378B925377D8C005942D0 /* CustomCameraControler.swift */,
 				695378A92537613D005942D0 /* Main.storyboard */,
+				69147A5B253C283F003C1A67 /* TestViewController.swift */,
 				695378AC25376145005942D0 /* Assets.xcassets */,
 				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
 				695378B125376145005942D0 /* Info.plist */,
@@ -151,6 +154,7 @@
 			files = (
 				695378A82537613D005942D0 /* HomeViewController.swift in Sources */,
 				695378A42537613D005942D0 /* AppDelegate.swift in Sources */,
+				69147A5C253C2840003C1A67 /* TestViewController.swift in Sources */,
 				695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */,
 				695378CB2537A8FE005942D0 /* ImageViewController.swift in Sources */,
 				695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */,

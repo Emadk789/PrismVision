@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pointer: UIImageView!
+    @IBOutlet weak var flashButton: UIButton!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -24,6 +25,10 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var tempPointerLocation: CGPoint!;
     
     var request: VNCoreMLRequest!;
+    var pointerHorizantalConstranit: NSLayoutConstraint?;
+    var pointerVerticalConstranit: NSLayoutConstraint?;
+    var pointerNewTopConstranit: NSLayoutConstraint?;
+    var pointerNewleftConstranit: NSLayoutConstraint?;
     
     @IBOutlet weak var pointerCenterY: NSLayoutConstraint!
     @IBOutlet weak var pointerCenterX: NSLayoutConstraint!
@@ -32,9 +37,7 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         super.viewDidLoad()
         
         setupCameraView();
-        cameraButton.layer.zPosition = 1;
-        pointer.layer.zPosition = 1;
-        label.layer.zPosition = 1;
+        setupZPositions();
         print("pointerLocation0", self.pointer.center);
         
         request = setUp();
@@ -49,9 +52,26 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         
     }
+    func setupZPositions() {
+        cameraButton.layer.zPosition = 1;
+        pointer.layer.zPosition = 1;
+        label.layer.zPosition = 1;
+        flashButton.layer.zPosition = 1;
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        pointer.center = CGPoint(x: 300, y: 600)
+        pointer.translatesAutoresizingMaskIntoConstraints = false;
+        self.pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: cameraView.centerXAnchor);
+        pointerHorizantalConstranit?.isActive = true;
+        pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: cameraView.centerYAnchor)
+        pointerVerticalConstranit?.isActive = true;
+//        pointer.topAnchor.constraint(equalTo: cameraView.topAnchor, constant: 550).isActive = true;
+        
+//        pointer.leadingAnchor
+//        let horizantalConstrint = NSLayoutConstraint(item: pointer!, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+//        view.addConstraint(horizantalConstrint);
+//        pointer.center = CGPoint(x: 300, y: 600)
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
@@ -77,6 +97,19 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         return
       }
         if gesture.state == .ended {
+            pointerHorizantalConstranit?.isActive = false;
+            pointerVerticalConstranit?.isActive = false;
+            if (pointerNewTopConstranit?.isActive) != nil ||  (pointerNewleftConstranit?.isActive) != nil {
+                pointerNewTopConstranit?.isActive = false;
+                pointerNewleftConstranit?.isActive = false;
+            }
+            pointerNewTopConstranit = self.pointer.topAnchor.constraint(equalTo: self.cameraView.topAnchor, constant: gestureView.center.y);
+            pointerNewTopConstranit?.isActive = true;
+//            self.pointer.topAnchor.constraint(equalTo: self.cameraView.topAnchor, constant: gestureView.center.y).isActive = true;
+            pointerNewleftConstranit = self.pointer.leftAnchor.constraint(equalTo: self.cameraView.leftAnchor, constant: gestureView.center.x);
+            pointerNewleftConstranit?.isActive = true;
+//            self.pointer.leadingAnchor.constraint(equalTo: self.cameraView.leadingAnchor, constant: gestureView.center.x).isActive = true;
+            
             let photoSettings = AVCapturePhotoSettings();
             photoOutput.capturePhoto(with: photoSettings, delegate: self);
             tempPointerLocation = pointer.center;
@@ -100,6 +133,11 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         
     }
+    @IBAction func flashButtonClicked(_ sender: Any) {
+        toggleFlash();
+    }
+    
+    
     
 }
 // MARK: - CoreML
@@ -344,7 +382,8 @@ extension HomeViewController {
             guard let location = self.tempPointerLocation else { return }
             DispatchQueue.main.async {
                 //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
-                self.pointer.frame.origin = location;
+               
+//                self.pointer.frame.origin = location;
                 print("pointerLocation3", self.tempPointerLocation);
             }
             
@@ -355,6 +394,28 @@ extension HomeViewController {
 //
 //                present(vc, animated: true, completion: nil);
         
+    }
+    func toggleFlash() {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
+        guard device.hasTorch else { return }
+
+        do {
+            try device.lockForConfiguration()
+
+            if (device.torchMode == AVCaptureDevice.TorchMode.on) {
+                device.torchMode = AVCaptureDevice.TorchMode.off
+            } else {
+                do {
+                    try device.setTorchModeOn(level: 1.0)
+                } catch {
+                    print(error)
+                }
+            }
+
+            device.unlockForConfiguration()
+        } catch {
+            print(error)
+        }
     }
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
