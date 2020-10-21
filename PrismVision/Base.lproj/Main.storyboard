@@ -53,20 +53,36 @@
                                     <outletCollection property="gestureRecognizers" destination="FPS-XR-dbu" appends="YES" id="TF7-ez-S5V"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IG-ng-V8C">
+                                <rect key="frame" x="327" y="116" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="vdV-DN-C5P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" image="album"/>
+                                <connections>
+                                    <action selector="albumButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D1p-2u-Tsr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kXg-UW-nvP" secondAttribute="trailing" constant="8" id="10S-xz-Xv5"/>
+                            <constraint firstItem="3IG-ng-V8C" firstAttribute="top" secondItem="kXg-UW-nvP" secondAttribute="bottom" constant="16" id="6em-Co-cOi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gq5-zk-zrr" secondAttribute="bottom" id="BZW-Rl-jX3"/>
                             <constraint firstItem="kXg-UW-nvP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="G3S-eu-n19"/>
+                            <constraint firstItem="3IG-ng-V8C" firstAttribute="width" secondItem="3IG-ng-V8C" secondAttribute="height" multiplier="1:1" id="Gio-MO-UBR"/>
                             <constraint firstItem="Gq5-zk-zrr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dbE-cm-bc4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xN-ws-4aO" secondAttribute="bottom" constant="30" id="iNp-A6-V4L"/>
                             <constraint firstItem="7xN-ws-4aO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xHk-0Y-fa0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3IG-ng-V8C" secondAttribute="trailing" constant="8" id="xeU-In-nwC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9B3-Dw-8D1"/>
                     <connections>
+                        <outlet property="albumButton" destination="3IG-ng-V8C" id="Y5s-4X-Jun"/>
                         <outlet property="cameraButton" destination="7xN-ws-4aO" id="5Hm-lg-jzv"/>
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
                         <outlet property="flashButton" destination="kXg-UW-nvP" id="wNc-5J-UEr"/>
@@ -148,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JT-AG-YWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="122.78860569715144"/>
+            <point key="canvasLocation" x="2201" y="104"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="H8F-WE-Kzk">
@@ -290,6 +306,7 @@
     <resources>
         <image name="CameraButton" width="72" height="72"/>
         <image name="CameraButton2" width="70" height="70"/>
+        <image name="album" width="50" height="50"/>
         <image name="flash" width="50" height="50"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

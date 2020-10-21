@@ -10,16 +10,15 @@ import AVFoundation;
 import Vision;
 import CoreML;
 
-class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var flashButton: UIButton!
     
-    @IBOutlet weak var pointerCenterY: NSLayoutConstraint!
-    @IBOutlet weak var pointerCenterX: NSLayoutConstraint!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var albumButton: UIButton!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -35,11 +34,18 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var pointerNewTopConstranit: NSLayoutConstraint?;
     var pointerNewleftConstranit: NSLayoutConstraint?;
     
-    
+    let pickerView: UIImagePickerController = {
+        let pikerView = UIImagePickerController();
+        pikerView.sourceType = .photoLibrary;
+        return pikerView;
+    }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //look into it!!!
+        pickerView.delegate = self;
         
         setupCameraView();
         setupZPositions();
@@ -62,6 +68,7 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         pointer.layer.zPosition = 1;
         label.layer.zPosition = 1;
         flashButton.layer.zPosition = 1;
+        albumButton.layer.zPosition = 1;
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -78,6 +85,18 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     @IBAction func flashButtonClicked(_ sender: Any) {
         toggleFlash();
+    }
+    @IBAction func albumButtonClicked(_ sender: Any) {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true else { return }
+        
+        present(pickerView, animated: true, completion: nil);
+        
+//        let x =
+//        print("Yes");
+//        let albumViewController = AlbumViewController();
+//        present(albumViewController, animated: true, completion: nil);
+//        show(AlbumViewController, sender: nil);
+        
     }
     
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
