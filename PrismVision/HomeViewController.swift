@@ -9,8 +9,33 @@ import UIKit
 import AVFoundation;
 import Vision;
 import CoreML;
-
-class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension UIViewController {
+    func setUpPointer(_ pointer: UIImageView) {
+        
+        addPanTarget(pointer);
+        setupPointerConstraints(pointer);
+        
+    }
+    @objc func setupPointerConstraints(_ pointer: UIImageView) {
+        let pointerHorizantalConstranit: NSLayoutConstraint?
+        let pointerVerticalConstranit: NSLayoutConstraint?
+            pointer.translatesAutoresizingMaskIntoConstraints = false;
+        pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: view.centerXAnchor);
+        pointerHorizantalConstranit?.isActive = true;
+        pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        pointerVerticalConstranit?.isActive = true;
+        
+    }
+    func addPanTarget(_ pointer: UIImageView) {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePointerPan(_:)))
+        pointer.addGestureRecognizer(pan);
+    }
+    @objc func handlePointerPan(_ sender: UIPanGestureRecognizer) {
+        
+    }
+    
+}
+class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var label: UILabel!
@@ -43,18 +68,16 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIIma
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setupcons
         //look into it!!!
         pickerView.delegate = self;
         
         setupCameraView();
         setupZPositions();
-        print("pointerLocation0", self.pointer.center);
         
         request = setUp();
-        
-        print("PointerCosntrinats", cameraView.constraints)
-        pointer.center = CGPoint(x: 300, y: 600)
+        setUpPointer(pointer);
+//        pointer2.backgroundColor = .systemRed;
 //        cameraView.removeConstraint(pointerCenterY);
 //        cameraView.removeConstraint(pointerCenterX);
 //        print("PointerCosntrinats", cameraView.constraints)
@@ -69,15 +92,25 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIIma
         label.layer.zPosition = 1;
         flashButton.layer.zPosition = 1;
         albumButton.layer.zPosition = 1;
+        
+        
     }
 
+    override func setupPointerConstraints(_ pointer: UIImageView) {
+            pointer.translatesAutoresizingMaskIntoConstraints = false;
+        pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: view.centerXAnchor);
+        pointerHorizantalConstranit?.isActive = true;
+        pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        pointerVerticalConstranit?.isActive = true;
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        pointer.translatesAutoresizingMaskIntoConstraints = false;
-        self.pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: cameraView.centerXAnchor);
-        pointerHorizantalConstranit?.isActive = true;
-        pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: cameraView.centerYAnchor)
-        pointerVerticalConstranit?.isActive = true;
+//        pointer.translatesAutoresizingMaskIntoConstraints = false;
+//        self.pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: cameraView.centerXAnchor);
+//        pointerHorizantalConstranit?.isActive = true;
+//        pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: cameraView.centerYAnchor)
+//        pointerVerticalConstranit?.isActive = true;
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
@@ -98,7 +131,36 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIIma
 //        show(AlbumViewController, sender: nil);
         
     }
-    
+    override func handlePointerPan(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+
+        // 2
+          guard let gestureView = pointer else {
+          return
+        }
+        if sender.state == .ended {
+              
+              addNewConstraints(to: gestureView);
+              
+              capturePhoto();
+  //            tempPointerLocation = pointer.center;
+          }
+
+  //      gestureView.center = CGPoint(
+  //        x: gestureView.center.x + translation.x,
+  //        y: gestureView.center.y + translation.y
+  //      )
+          gestureView.center = CGPoint(
+              x: gestureView.center.x + translation.x,
+              y: gestureView.center.y + translation.y
+          )
+          
+          print("handlePen","Height, \(gestureView.bounds.height). Width, \(gestureView.bounds.width)");
+          print(gestureView.center);
+          
+        // 3
+        sender.setTranslation(.zero, in: view)
+    }
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
       // 1
       let translation = gesture.translation(in: view)
@@ -147,7 +209,17 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate, UIIma
         pointerNewleftConstranit?.isActive = true;
     }
 }
-
+// TODO: Add the image to the AlbumVC and add the pinter there as well also map the panGesture handeler to the same function. Add the label as will!!!
+extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: nil);
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
+        let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
+        vc.image = image;
+        vc.modalPresentationStyle = .fullScreen;
+        present(vc, animated: true);
+    }
+}
 
 
 
