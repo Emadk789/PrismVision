@@ -30,12 +30,10 @@ extension UIViewController {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePointerPan(_:)))
         pointer.addGestureRecognizer(pan);
     }
-    @objc func handlePointerPan(_ sender: UIPanGestureRecognizer) {
-        
-    }
+    @objc func handlePointerPan(_ sender: UIPanGestureRecognizer) {}
     
 }
-class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var label: UILabel!
@@ -52,7 +50,7 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var photoOutput = AVCapturePhotoOutput();
     var tempPointerLocation: CGPoint!;
     
-    var request: VNCoreMLRequest!;
+    
     
     var pointerHorizantalConstranit: NSLayoutConstraint?;
     var pointerVerticalConstranit: NSLayoutConstraint?;
@@ -70,12 +68,13 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         super.viewDidLoad()
 //        setupcons
         //look into it!!!
+        print(CGSize(width: view.bounds.width, height: view.bounds.height))
         pickerView.delegate = self;
         
         setupCameraView();
         setupZPositions();
         
-        request = setUp();
+        
         setUpPointer(pointer);
 //        pointer2.backgroundColor = .systemRed;
 //        cameraView.removeConstraint(pointerCenterY);
@@ -209,7 +208,8 @@ class HomeViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         pointerNewleftConstranit?.isActive = true;
     }
 }
-// TODO: Add the image to the AlbumVC and add the pinter there as well also map the panGesture handeler to the same function. Add the label as will!!!
+// TODO: Add the label to the ImagePickerPhotoPreviewController as well!!! Also, override the setupPointerConstraints
+// TODO: Move the UIViewController to a file.
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil);

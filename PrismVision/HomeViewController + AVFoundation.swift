@@ -141,12 +141,12 @@ extension HomeViewController {
         let cImage = CIImage(image: newImage)!;
         //        runVisionRequest(ciImage: cImage, classificationRequest: request);
         runVisionRequest2(ciImage: cImage, classificationRequest: request) {
-            guard let location = self.tempPointerLocation else { return }
+//            guard let location = self.tempPointerLocation else { return }
             DispatchQueue.main.async {
                 //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
-                
+                self.label.text = self.coreMLLabel;
                 //                self.pointer.frame.origin = location;
-                print("pointerLocation3", self.tempPointerLocation);
+//                print("pointerLocation3", self.tempPointerLocation);
             }
             
         }
@@ -157,6 +157,7 @@ extension HomeViewController {
 //                        present(vc, animated: true, completion: nil);
         
     }
+    
     func toggleFlash() {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
         guard device.hasTorch else { return }

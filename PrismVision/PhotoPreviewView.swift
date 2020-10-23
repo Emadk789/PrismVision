@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class PhotoPreviewView: UIViewController {
+class PhotoPreviewView: HomeAndImagePickerSuperViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage?;

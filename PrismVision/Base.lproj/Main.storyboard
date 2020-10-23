@@ -313,6 +313,12 @@
                                     <constraint firstAttribute="width" constant="30" id="ajw-HM-mxH"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR4-nB-Fsc">
+                                <rect key="frame" x="100" y="630" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tf2-NO-zj7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -320,12 +326,17 @@
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="bottom" secondItem="Tf2-NO-zj7" secondAttribute="bottom" id="J3s-ii-6PW"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="top" secondItem="Tf2-NO-zj7" secondAttribute="top" id="TjA-L2-cGg"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="leading" secondItem="Tf2-NO-zj7" secondAttribute="leading" id="Xnb-wh-XnX"/>
+                            <constraint firstItem="dR4-nB-Fsc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Tf2-NO-zj7" secondAttribute="leading" constant="100" id="YcY-yF-gD1"/>
+                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="bottom" secondItem="dR4-nB-Fsc" secondAttribute="bottom" constant="16" id="kq5-J2-m4b"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="trailing" secondItem="Tf2-NO-zj7" secondAttribute="trailing" id="r9l-Gf-4Aq"/>
+                            <constraint firstItem="dR4-nB-Fsc" firstAttribute="centerX" secondItem="okw-gL-8x5" secondAttribute="centerX" id="tt6-fR-W0e"/>
+                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dR4-nB-Fsc" secondAttribute="trailing" constant="100" id="wT5-Pn-sDc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="UgX-fD-hWI" id="QcH-8e-JGJ"/>
                         <outlet property="pointer" destination="nVF-ty-Ftb" id="Egu-Vh-AFt"/>
+                        <outlet property="privewLabel" destination="dR4-nB-Fsc" id="sPV-OY-2dJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHM-U6-lcx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

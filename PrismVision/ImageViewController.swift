@@ -162,4 +162,5 @@ extension UIImage {
 
         return newImage!
       }
+    
 }
