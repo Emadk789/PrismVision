@@ -18,7 +18,7 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
     var pointerVerticalConstranit: NSLayoutConstraint?
     var pointerNewTopConstranit: NSLayoutConstraint?
     var pointerNewleftConstranit: NSLayoutConstraint?
-    var request2: VNCoreMLRequest!
+//    var request2: VNCoreMLRequest!
     override func viewDidLoad() {
         super.viewDidLoad();
         setUpPointer(pointer);
@@ -39,6 +39,7 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
 //        setUpPointer(sender: self, pointer);
         
     }
+    
     override func setupPointerConstraints(_ pointer: UIImageView) {
             pointer.translatesAutoresizingMaskIntoConstraints = false;
         pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: view.centerXAnchor);
@@ -70,7 +71,7 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
                     
                 }
                 
-                print("This is the CorMLLabel", self.coreMLLabel);
+//                print("This is the CorMLLabel", self.coreMLLabel);
             }
         }
         
@@ -97,3 +98,4 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
     
     
 }
+

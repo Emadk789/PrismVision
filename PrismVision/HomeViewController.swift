@@ -50,7 +50,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     var photoOutput = AVCapturePhotoOutput();
     var tempPointerLocation: CGPoint!;
     
-    
+//    var request: VNCoreMLRequest!;
     
     var pointerHorizantalConstranit: NSLayoutConstraint?;
     var pointerVerticalConstranit: NSLayoutConstraint?;
@@ -74,7 +74,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setupCameraView();
         setupZPositions();
         
-        
+//        request = setUp();
         setUpPointer(pointer);
 //        pointer2.backgroundColor = .systemRed;
 //        cameraView.removeConstraint(pointerCenterY);
@@ -160,40 +160,40 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         // 3
         sender.setTranslation(.zero, in: view)
     }
-    @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
-      // 1
-      let translation = gesture.translation(in: view)
-
-      // 2
-        guard let gestureView = pointer else {
-        return
-      }
-        if gesture.state == .ended {
-            
-            addNewConstraints(to: gestureView);
-            
-            capturePhoto();
-//            tempPointerLocation = pointer.center;
-        }
-
-//      gestureView.center = CGPoint(
-//        x: gestureView.center.x + translation.x,
-//        y: gestureView.center.y + translation.y
-//      )
-        gestureView.center = CGPoint(
-            x: gestureView.center.x + translation.x,
-            y: gestureView.center.y + translation.y
-        )
-        
-        print("handlePen","Height, \(gestureView.bounds.height). Width, \(gestureView.bounds.width)");
-        print(gestureView.center);
-        
-      // 3
-      gesture.setTranslation(.zero, in: view)
-        
-        
-        
-    }
+//    @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
+//      // 1
+//      let translation = gesture.translation(in: view)
+//
+//      // 2
+//        guard let gestureView = pointer else {
+//        return
+//      }
+//        if gesture.state == .ended {
+//
+//            addNewConstraints(to: gestureView);
+//
+//            capturePhoto();
+////            tempPointerLocation = pointer.center;
+//        }
+//
+////      gestureView.center = CGPoint(
+////        x: gestureView.center.x + translation.x,
+////        y: gestureView.center.y + translation.y
+////      )
+//        gestureView.center = CGPoint(
+//            x: gestureView.center.x + translation.x,
+//            y: gestureView.center.y + translation.y
+//        )
+//
+//        print("handlePen","Height, \(gestureView.bounds.height). Width, \(gestureView.bounds.width)");
+//        print(gestureView.center);
+//
+//      // 3
+//      gesture.setTranslation(.zero, in: view)
+//
+//
+//
+//    }
     //MARK:- Helper(s)
     private func addNewConstraints(to gestureView: UIView) {
         pointerHorizantalConstranit?.isActive = false;
