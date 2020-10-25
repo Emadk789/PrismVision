@@ -57,8 +57,13 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         gesture.setTranslation(.zero, in: view);
         if gesture.state == .ended {
             updateConstraints(to: gestureView);
-            let resizedImage = (image?.resizeImage(targetSize: CGSize(width: view.bounds.width, height: view.bounds.height)))!
+            var resizedImage = (image?.resizeImage(targetSize: CGSize(width: view.bounds.width, height: view.bounds.height)))!
             
+            // TODO: Take a screenshout of the image and pass it to the model.
+//            pointer.removeFromSuperview();
+            resizedImage = view.makeSnapshot()!;
+//            view.addSubview(pointer);
+//            pointer.layer.zPosition = 1;
             let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
             let vc = self.storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
             vc.image = newImage;
@@ -99,3 +104,24 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
     
 }
 
+extension UIView {
+    func makeSnapshot() -> UIImage? {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(size: frame.size)
+            return renderer.image { _ in drawHierarchy(in: bounds, afterScreenUpdates: true) }
+        } else {
+            return layer.makeSnapshot()
+        }
+    }
+}
+extension CALayer {
+    func makeSnapshot() -> UIImage? {
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        render(in: context)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        return screenshot
+    }
+}
