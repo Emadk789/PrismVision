@@ -145,6 +145,7 @@ extension HomeViewController {
             DispatchQueue.main.async {
                 //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
                 self.label.text = self.coreMLLabel;
+                self.label.isHidden = false;
                 //                self.pointer.frame.origin = location;
 //                print("pointerLocation3", self.tempPointerLocation);
             }

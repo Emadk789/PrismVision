@@ -52,7 +52,8 @@ class HomeAndImagePickerSuperViewController: UIViewController {
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
             let classifications = results as! [VNClassificationObservation];
             let value = classifications.first?.identifier;
-        let confidence = ((classifications.first?.confidence)! as Float) * 100;
+        var confidence = ((classifications.first?.confidence)! as Float) * 100;
+        confidence.round(.toNearestOrAwayFromZero)
 //        print("pointerLocation", pointer.center);
         DispatchQueue.main.async {
             self.coreMLLabel = "Color: \(value!), Confidence: \(confidence) ";

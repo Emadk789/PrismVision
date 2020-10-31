@@ -42,6 +42,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -63,7 +64,10 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         return pikerView;
     }()
     
-
+    //TODO: Add a logo to the witing screen and to the main application image.
+    //TODO: search about how to transelate an application into Arabic!!
+    //TODO: Implemnt the transelation.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupcons
@@ -74,6 +78,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setupCameraView();
         setupZPositions();
         
+        label.isHidden = true;
 //        request = setUp();
         setUpPointer(pointer);
 //        pointer2.backgroundColor = .systemRed;
@@ -91,6 +96,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         label.layer.zPosition = 1;
         flashButton.layer.zPosition = 1;
         albumButton.layer.zPosition = 1;
+        settingsButton.layer.zPosition = 1;
         
         
     }
@@ -216,7 +222,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
         let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
         vc.image = image;
-        vc.modalPresentationStyle = .fullScreen;
+//        vc.modalPresentationStyle = .fullScreen;
         present(vc, animated: true);
     }
 }

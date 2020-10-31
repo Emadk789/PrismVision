@@ -22,6 +22,7 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
     override func viewDidLoad() {
         super.viewDidLoad();
         setUpPointer(pointer);
+        privewLabel.isHidden = true;
 //        request2 = setUp();
     }
 //    func setUpPointer(sender: UIViewController, _ pointer: UIImageView) {
@@ -65,14 +66,15 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
 //            view.addSubview(pointer);
 //            pointer.layer.zPosition = 1;
             let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
-            let vc = self.storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
-            vc.image = newImage;
-            
-            self.present(vc, animated: true, completion: nil);
+//            let vc = self.storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
+//            vc.image = newImage;
+//            
+//            self.present(vc, animated: true, completion: nil);
             let ciImage = CIImage(image: newImage!);
             runVisionRequest2(ciImage: ciImage!, classificationRequest: request) {
                 DispatchQueue.main.async {
                     self.privewLabel.text = self.coreMLLabel;
+                    self.privewLabel.isHidden = false;
                     
                 }
                 
