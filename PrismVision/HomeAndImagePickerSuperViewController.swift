@@ -21,10 +21,15 @@ class HomeAndImagePickerSuperViewController: UIViewController {
     
     func setUp() -> VNCoreMLRequest {
         let prisimVison = try! PrisimVision3(configuration: .init());
+        
         let model = try! VNCoreMLModel(for: PrisimVision3().model)
+        
+        let p = try! PrisimVision5(configuration: .init());
+        let m = try! VNCoreMLModel(for: p.model);
+        let model2 = try! VNCoreMLModel(for: PrisimVision5().model);
 //        let model = try! VNCoreMLModel(for: prisimVison.model)
 
-        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+        let request = VNCoreMLRequest(model: m, completionHandler: { [weak self] request, error in
             self?.processClassifications(for: request, error: error)
             
         })

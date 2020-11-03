@@ -23,6 +23,7 @@
 		6964C63F254013200063318E /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C63E254013200063318E /* AlbumViewController.swift */; };
 		6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */; };
 		6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */; };
+		69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		6964C63E254013200063318E /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotoPreviewController.swift; sourceTree = "<group>"; };
 		6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndImagePickerSuperViewController.swift; sourceTree = "<group>"; };
+		69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision5.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				695378AC25376145005942D0 /* Assets.xcassets */,
 				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
 				695378B125376145005942D0 /* Info.plist */,
+				69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */,
 				695378C625378F53005942D0 /* PrisimVision3.mlmodel */,
 				695378BC25377DE4005942D0 /* PhotoPreviewView.swift */,
 				695378CA2537A8FE005942D0 /* ImageViewController.swift */,
@@ -173,6 +176,7 @@
 				6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */,
 				695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */,
 				695378CB2537A8FE005942D0 /* ImageViewController.swift in Sources */,
+				69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */,
 				69509ED4253D9F8C00DFA205 /* HomeViewController + CorML.swift in Sources */,
 				695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */,
 				6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */,

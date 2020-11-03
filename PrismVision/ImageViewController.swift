@@ -72,8 +72,10 @@ class ImageViewController: UIViewController {
     // MARK: - CoreML
     func setUp() -> VNCoreMLRequest {
         let model = try! VNCoreMLModel(for: PrisimVision3().model)
-
-        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+        let p = try! PrisimVision5(configuration: .init());
+        let m = try! VNCoreMLModel(for: p.model);
+        let model2 = try! VNCoreMLModel(for: PrisimVision5().model);
+        let request = VNCoreMLRequest(model: model2, completionHandler: { [weak self] request, error in
             self?.processClassifications(for: request, error: error)
         })
 //        request.imageCropAndScaleOption = .centerCrop
