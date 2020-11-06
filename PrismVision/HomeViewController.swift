@@ -124,6 +124,11 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBAction func flashButtonClicked(_ sender: Any) {
         toggleFlash();
     }
+    @IBAction func settingsButtonClicked(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "SettingsViewController") as! SettingsViewController;
+        
+        present(vc, animated: true);
+    }
     @IBAction func albumButtonClicked(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true else { return }
         
