@@ -31,14 +31,26 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-//            cell.accessoryView;
+            //TODO: Add this to the userDefaults!
             cell.accessoryType = .checkmark;
         default:
             break;
         }
-        
+        cell.selectionStyle = .none;
         return cell;
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let i = indexPath;
+        let myIndexPath = IndexPath(row: 0, section: 1);
+        let cell = tableView.cellForRow(at: indexPath)!;
+        let englishCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0));
+        let arabicCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0));
+
+        englishCell?.accessoryType = .none;
+        arabicCell?.accessoryType = .none;
+        
+        cell.accessoryType = .checkmark;
+        cell.isSelected = false;
+    }
     
 }
