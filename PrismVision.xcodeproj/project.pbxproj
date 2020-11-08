@@ -21,6 +21,7 @@
 		695378C725378F54005942D0 /* PrisimVision3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 695378C625378F53005942D0 /* PrisimVision3.mlmodel */; };
 		695B76D0255471F500B922B7 /* UIImage + Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76CF255471F500B922B7 /* UIImage + Extra.swift */; };
 		695B76D72555DE1A00B922B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76D62555DE1A00B922B7 /* SettingsViewController.swift */; };
+		695B76DA25588CA900B922B7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76D925588CA900B922B7 /* UIViewController.swift */; };
 		6964C63F254013200063318E /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C63E254013200063318E /* AlbumViewController.swift */; };
 		6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */; };
 		6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */; };
@@ -44,6 +45,7 @@
 		695378C625378F53005942D0 /* PrisimVision3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision3.mlmodel; sourceTree = "<group>"; };
 		695B76CF255471F500B922B7 /* UIImage + Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extra.swift"; sourceTree = "<group>"; };
 		695B76D62555DE1A00B922B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		695B76D925588CA900B922B7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6964C63E254013200063318E /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotoPreviewController.swift; sourceTree = "<group>"; };
 		6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndImagePickerSuperViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				695B76CF255471F500B922B7 /* UIImage + Extra.swift */,
+				695B76D925588CA900B922B7 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				695B76D0255471F500B922B7 /* UIImage + Extra.swift in Sources */,
 				69509ED7253D9FEA00DFA205 /* HomeViewController + AVFoundation.swift in Sources */,
 				695378A62537613D005942D0 /* SceneDelegate.swift in Sources */,
+				695B76DA25588CA900B922B7 /* UIViewController.swift in Sources */,
 				6964C63F254013200063318E /* AlbumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
