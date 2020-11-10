@@ -19,6 +19,7 @@ class HomeAndImagePickerSuperViewController: UIViewController {
     }
     
     func setUp() -> VNCoreMLRequest {
+        //TODO: Make a green Black model!!!
         let prisimVison = try! PrisimVision3(configuration: .init());
         
         let model = try! VNCoreMLModel(for: PrisimVision3().model)
@@ -27,7 +28,7 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         let m = try! VNCoreMLModel(for: p.model);
         let model2 = try! VNCoreMLModel(for: PrisimVision5().model);
 
-        let request = VNCoreMLRequest(model: m, completionHandler: { [weak self] request, error in
+        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
             self?.processClassifications(for: request, error: error)
             
         })
