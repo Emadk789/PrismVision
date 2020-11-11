@@ -23,6 +23,7 @@
 		695B76DA25588CA900B922B7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76D925588CA900B922B7 /* UIViewController.swift */; };
 		6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */; };
 		6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */; };
+		69901F7E255BD91200C27729 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69901F7D255BD91200C27729 /* Localizable.strings */; };
 		69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,9 @@
 		695B76D925588CA900B922B7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotoPreviewController.swift; sourceTree = "<group>"; };
 		6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndImagePickerSuperViewController.swift; sourceTree = "<group>"; };
+		69901F7D255BD91200C27729 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		69901F80255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		69901F81255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision5.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 				6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */,
 				6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */,
 				695B76CE255471D700B922B7 /* Extensions */,
+				69901F7D255BD91200C27729 /* Localizable.strings */,
 			);
 			path = PrismVision;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 695378972537613C005942D0;
 			productRefGroup = 695378A12537613D005942D0 /* Products */;
@@ -166,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695378B025376145005942D0 /* LaunchScreen.storyboard in Resources */,
+				69901F7E255BD91200C27729 /* Localizable.strings in Resources */,
 				695378AD25376145005942D0 /* Assets.xcassets in Resources */,
 				695378AB2537613D005942D0 /* Main.storyboard in Resources */,
 			);
@@ -202,6 +209,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				695378AA2537613D005942D0 /* Base */,
+				69901F80255BE01E00C27729 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				695378AF25376145005942D0 /* Base */,
+				69901F81255BE01E00C27729 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -282,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

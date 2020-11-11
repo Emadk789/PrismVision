@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  PrismVision
+
+  Created by Emad Albarnawi on 11/11/2020.
+  
+*/
+
+"Color: %@, Confidence: %@" = "Color: %@, Confidence: %@";
+
+//List down the colors' names we have!

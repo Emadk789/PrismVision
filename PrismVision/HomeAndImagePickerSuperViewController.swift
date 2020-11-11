@@ -11,6 +11,8 @@ import CoreML
 
 class HomeAndImagePickerSuperViewController: UIViewController {
     var coreMLLabel: String = "";
+    var coreMLValue: String = "";
+    var coreMLConfidence: String = "";
     var request: VNCoreMLRequest!;
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,8 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         var confidence = ((classifications.first?.confidence)! as Float) * 100;
         confidence.round(.toNearestOrAwayFromZero)
         DispatchQueue.main.async {
+            self.coreMLValue = value!;
+            self.coreMLConfidence = "\(confidence)";
             self.coreMLLabel = "Color: \(value!), Confidence: \(confidence) ";
             print("In Processclassification", value!, confidence);
         }

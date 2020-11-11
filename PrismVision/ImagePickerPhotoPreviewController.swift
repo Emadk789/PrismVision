@@ -73,7 +73,10 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
             let ciImage = CIImage(image: newImage!);
             runVisionRequest2(ciImage: ciImage!, classificationRequest: request) {
                 DispatchQueue.main.async {
-                    self.privewLabel.text = self.coreMLLabel;
+//                    self.privewLabel.text = self.coreMLLabel;
+                    let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
+                    
+                    self.privewLabel.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
                     self.privewLabel.isHidden = false;
                     
                 }

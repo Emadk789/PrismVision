@@ -144,7 +144,11 @@ extension HomeViewController {
 //            guard let location = self.tempPointerLocation else { return }
             DispatchQueue.main.async {
                 //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
-                self.label.text = self.coreMLLabel;
+//                self.label.text = self.coreMLLabel;
+                
+                let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
+                
+                self.label.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
                 self.label.isHidden = false;
                 //                self.pointer.frame.origin = location;
 //                print("pointerLocation3", self.tempPointerLocation);
