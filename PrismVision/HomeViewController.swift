@@ -52,6 +52,18 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         label.isHidden = true;
         setUpPointer(pointer);
+        
+        setAccessibillityLabels();
+//        accessibilityElements = [
+//            flashButton,
+//            settingsButton,
+//         
+//            albumButton,
+////         pointer,
+//            cameraButton,
+//            label
+//         ].compactMap { $0 }
+
     }
     private func setupZPositions() {
         cameraButton.layer.zPosition = 1;
@@ -61,6 +73,14 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         albumButton.layer.zPosition = 1;
         settingsButton.layer.zPosition = 1;
         
+        
+    }
+    private func setAccessibillityLabels() {
+        cameraButton.accessibilityLabel = NSLocalizedString("Camera", comment: "The camera Button");
+        flashButton.accessibilityLabel = NSLocalizedString("Flash", comment: "The flash Button");
+        albumButton.accessibilityLabel = NSLocalizedString("Album", comment: "The Album Button");
+        settingsButton.accessibilityLabel = NSLocalizedString("Settings", comment: "The Settings Button");
+        pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
         
     }
 

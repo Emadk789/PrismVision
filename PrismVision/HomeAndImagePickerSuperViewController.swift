@@ -47,9 +47,13 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         var confidence = ((classifications.first?.confidence)! as Float) * 100;
         confidence.round(.toNearestOrAwayFromZero)
         DispatchQueue.main.async {
-            self.coreMLValue = value!;
+//            self.coreMLValue = value!;
             self.coreMLConfidence = "\(confidence)";
             self.coreMLLabel = "Color: \(value!), Confidence: \(confidence) ";
+//            if let classificationValue = NSLocalizedString(value!, comment: "") {
+//
+//            }
+            self.coreMLValue = NSLocalizedString(value!, comment: "");
             print("In Processclassification", value!, confidence);
         }
     }
