@@ -24,6 +24,7 @@
 		6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */; };
 		6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */; };
 		69901F83255C9B3800C27729 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69901F85255C9B3800C27729 /* Localizable.strings */; };
+		69901F8E255D3A9700C27729 /* PrisimVision27.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */; };
 		69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,8 @@
 		69901F80255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		69901F81255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		69901F84255C9B3800C27729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69901F86255C9B3B00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69901F8B255CA8D900C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision27.mlmodel; sourceTree = "<group>"; };
 		69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision5.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
 				695378B125376145005942D0 /* Info.plist */,
 				69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */,
+				69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */,
 				695378C625378F53005942D0 /* PrisimVision3.mlmodel */,
 				695378BC25377DE4005942D0 /* PhotoPreviewView.swift */,
 				6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */,
@@ -189,6 +192,7 @@
 				695378A82537613D005942D0 /* HomeViewController.swift in Sources */,
 				695378A42537613D005942D0 /* AppDelegate.swift in Sources */,
 				69147A5C253C2840003C1A67 /* TestViewController.swift in Sources */,
+				69901F8E255D3A9700C27729 /* PrisimVision27.mlmodel in Sources */,
 				6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */,
 				695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */,
 				69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */,
@@ -228,7 +232,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				69901F84255C9B3800C27729 /* en */,
-				69901F86255C9B3B00C27729 /* ar */,
+				69901F8B255CA8D900C27729 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
