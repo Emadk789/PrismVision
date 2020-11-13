@@ -135,11 +135,11 @@
             </objects>
             <point key="canvasLocation" x="140" y="103.89805097451276"/>
         </scene>
-        <!--Detection-->
+        <!--  -->
         <scene sceneID="j7s-54-Gce">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b8J-wX-5ga" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Detection" image="icons8-third-eye-symbol-50 1" id="HaT-xx-tt0">
+                    <tabBarItem key="tabBarItem" title="  " image="icons8-third-eye-symbol-50 1" id="HaT-xx-tt0">
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
                     <toolbarItems/>

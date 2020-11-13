@@ -15,6 +15,9 @@
 "Pointer" = "Pointer";
 "Settings" = "Settings";
 
+// Settings
+"Language" = "Language";
+
 
 //List down the colors' names we have!
 "Black" = "Black";

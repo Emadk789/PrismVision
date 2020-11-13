@@ -15,6 +15,10 @@
 "Pointer" = "المؤشر";
 "Settings" = "الاعدادات";
 
+// Settings
+"Language" = "اللغة";
+
+
 //List down the colors' names we have!
 "Black" = "اسود";
 "Grey" = "رمادي";
@@ -34,4 +38,5 @@
 "Orange" = "Orange";
 "Light orange" = "Light orange";
 "Brown" = "Brown";
+
 
