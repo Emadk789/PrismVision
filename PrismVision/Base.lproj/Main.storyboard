@@ -135,11 +135,11 @@
             </objects>
             <point key="canvasLocation" x="140" y="103.89805097451276"/>
         </scene>
-        <!--  -->
+        <!--  Detection-->
         <scene sceneID="j7s-54-Gce">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b8J-wX-5ga" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="  " image="icons8-third-eye-symbol-50 1" id="HaT-xx-tt0">
+                    <tabBarItem key="tabBarItem" title="  Detection" image="icons8-third-eye-symbol-50 1" id="HaT-xx-tt0">
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -322,7 +322,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CameraButton" width="72" height="72"/>
+        <image name="CameraButton" width="36" height="36"/>
         <image name="CameraButton2" width="70" height="70"/>
         <image name="Settings" width="72" height="72"/>
         <image name="album" width="50" height="50"/>

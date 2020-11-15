@@ -21,7 +21,7 @@
 
 //List down the colors' names we have!
 "Black" = "اسود";
-"Grey" = "رمادي";
+"Gray" = "رمادي";
 "White" = "ابيض";
 "Red" = "احمر";
 "Dark red" = "Dark red";
