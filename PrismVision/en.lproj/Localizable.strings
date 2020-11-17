@@ -21,7 +21,7 @@
 
 //List down the colors' names we have!
 "Black" = "Black";
-"Grey" = "Grey";
+"Gray" = "Gray";
 "White" = "White";
 "Red" = "Red";
 "Dark red" = "Dark red";

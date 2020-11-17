@@ -24,6 +24,8 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         setUpPointer(pointer);
         privewLabel.isHidden = true;
 //        request2 = setUp();
+        
+        pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
     }
 //    func setUpPointer(sender: UIViewController, _ pointer: UIImageView) {
     
