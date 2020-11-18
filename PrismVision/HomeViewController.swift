@@ -54,15 +54,6 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setUpPointer(pointer);
         
         setAccessibillityLabels();
-//        accessibilityElements = [
-//            flashButton,
-//            settingsButton,
-//         
-//            albumButton,
-////         pointer,
-//            cameraButton,
-//            label
-//         ].compactMap { $0 }
 
     }
     private func setupZPositions() {
@@ -109,12 +100,6 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         present(pickerView, animated: true, completion: nil);
         
-//        let x =
-//        print("Yes");
-//        let albumViewController = AlbumViewController();
-//        present(albumViewController, animated: true, completion: nil);
-//        show(AlbumViewController, sender: nil);
-        
     }
     override func handlePointerPan(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
@@ -158,7 +143,6 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
         let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
         vc.image = image;
-//        vc.modalPresentationStyle = .fullScreen;
         present(vc, animated: true);
     }
 }
