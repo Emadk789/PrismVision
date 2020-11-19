@@ -6,7 +6,7 @@
   
 */
 
-"Color: %@, Confidence: %@" = "اللون: %@، المعدل: %@";
+"Color: %@, Confidence: %@" = "اللون: %@، معدل الدقة: %@";
 
 //UI Objects' names
 "Camera" = "كاميرا";
