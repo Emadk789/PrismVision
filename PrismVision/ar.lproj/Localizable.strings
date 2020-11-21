@@ -24,19 +24,17 @@
 "Gray" = "رمادي";
 "White" = "ابيض";
 "Red" = "احمر";
-"Dark red" = "Dark red";
-"Pink" = "Pink";
+"Dark red" = "احمر غامق";
+"Pink" = "وردي";
 "Blue" = "ازرق";
-"Light blue" = "Light blue";
-"Dark Blue" = "Dark Blue";
-"Purple" = "Purple";
-"Light purple" = "Light purple";
-"Yellow" = "Yellow";
-"Brown yellow" = "Brown yellow";
+"Light blue" = "ازرق فاتح";
+"Dark Blue" = "ازرق فاتح";
+"Purple" = "ارجواني";
+"Light purple" = "ارجواني";
+"Yellow" = "اصفر";
+"Brown yellow" = "اصفر غامق";
 "Green" = "اخضر";
-"Yellow green" = "اخضر فاتح";
-"Orange" = "Orange";
-"Light orange" = "Light orange";
-"Brown" = "Brown";
-
-
+"Light green" = "اخضر فاتح";
+"Orange" = "برتقالي";
+"Light orange" = "برتقالي فاتح";
+"Brown" = "بنى";
