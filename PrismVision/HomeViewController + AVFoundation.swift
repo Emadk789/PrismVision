@@ -7,6 +7,7 @@
 
 import AVFoundation;
 import UIKit;
+import Alamofire
 
 
 // MARK:- AVFoundation
@@ -117,8 +118,11 @@ extension HomeViewController {
         //        let photoPreviewContainer = PhotoPreviewView(frame: self.view.frame)
         //        photoPreviewContainer.photoImageView.image = previewImage
         
-        print(view.bounds.width, view.bounds.height);
+        print("This is before", view.bounds.width, view.bounds.height);
+        print("This is the previewImage", previewImage?.size)
         let resizedImage = resizeImage(image: previewImage!, targetSize: CGSize(width: view.bounds.width, height: view.bounds.height));
+        print("This is the previewImage", resizedImage.size)
+        getColors(image: resizedImage)
         
         print(previewImage?.size.width, previewImage?.size.height);
         print("Screen Size:", view.bounds.width, view.bounds.height)
@@ -140,21 +144,21 @@ extension HomeViewController {
         
         let cImage = CIImage(image: newImage)!;
         //        runVisionRequest(ciImage: cImage, classificationRequest: request);
-        runVisionRequest2(ciImage: cImage, classificationRequest: request) {
-//            guard let location = self.tempPointerLocation else { return }
-            DispatchQueue.main.async {
-                //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
-//                self.label.text = self.coreMLLabel;
-                
-                let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
-                
-                self.label.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
-                self.label.isHidden = false;
-                //                self.pointer.frame.origin = location;
-//                print("pointerLocation3", self.tempPointerLocation);
-            }
-            
-        }
+//        runVisionRequest2(ciImage: cImage, classificationRequest: request) {
+////            guard let location = self.tempPointerLocation else { return }
+//            DispatchQueue.main.async {
+//                //TODO: Make a constraint and add it to the pointer in its new location and delete the old one!!!
+////                self.label.text = self.coreMLLabel;
+//                
+//                let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
+//                
+//                self.label.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
+//                self.label.isHidden = false;
+//                //                self.pointer.frame.origin = location;
+////                print("pointerLocation3", self.tempPointerLocation);
+//            }
+//            
+//        }
         
 //                        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
 //                        vc.image = newImage;
@@ -215,4 +219,8 @@ extension HomeViewController {
 
         return newImage!
     }
+    
+    
+    
+
 }

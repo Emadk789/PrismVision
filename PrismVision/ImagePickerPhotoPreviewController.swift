@@ -27,12 +27,7 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         
         pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
     }
-//    func setUpPointer(sender: UIViewController, _ pointer: UIImageView) {
-    
-//        setupPointerConstraints(pointer);
-////        addPanTarget(sender: sender);
-//
-//    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         print("This is the Image", image?.size.width ,image?.size.height);
@@ -68,25 +63,34 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
 //            view.addSubview(pointer);
 //            pointer.layer.zPosition = 1;
             let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
+            
+            getColors(image: newImage!)
 //            let vc = self.storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView;
 //            vc.image = newImage;
 //            
 //            self.present(vc, animated: true, completion: nil);
             let ciImage = CIImage(image: newImage!);
-            runVisionRequest2(ciImage: ciImage!, classificationRequest: request) {
-                DispatchQueue.main.async {
-//                    self.privewLabel.text = self.coreMLLabel;
-                    let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
-                    
-                    self.privewLabel.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
-                    self.privewLabel.isHidden = false;
-                    
-                }
-                
-//                print("This is the CorMLLabel", self.coreMLLabel);
-            }
+//            runVisionRequest2(ciImage: ciImage!, classificationRequest: request) {
+//                DispatchQueue.main.async {
+////                    self.privewLabel.text = self.coreMLLabel;
+//                    let formatString = NSLocalizedString("Color: %@, Confidence: %@", comment: "Classification Lable");
+//
+//                    self.privewLabel.text = String.localizedStringWithFormat(formatString, self.coreMLValue, self.coreMLConfidence);
+//                    self.privewLabel.isHidden = false;
+//
+//                }
+//
+////                print("This is the CorMLLabel", self.coreMLLabel);
+//            }
         }
         
+    }
+    override func updateLabel() {
+        // call super.updateLabel() to run super implementation
+        super.updateLabel()
+        
+        self.privewLabel.text = localizedLabelText
+        self.privewLabel.isHidden = false
     }
     
     //MARK:- Helper(s)

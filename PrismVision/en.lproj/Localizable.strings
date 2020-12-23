@@ -6,7 +6,8 @@
   
 */
 
-"Color: %@, Confidence: %@" = "Color: %@, Confidence: %@";
+//
+"Color: %@" = "Color: %@";
 
 //UI Objects' names
 "Camera" = "Camera";
@@ -20,7 +21,7 @@
 
 
 //List down the colors' names we have!
-"Black" = "Black";
+"Black" = "Black2";
 "Gray" = "Gray";
 "White" = "White";
 "Red" = "Red";

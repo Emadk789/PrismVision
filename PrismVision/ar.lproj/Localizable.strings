@@ -1,12 +1,15 @@
-/* 
+/*
   Localizable.strings
   PrismVision
 
   Created by Emad Albarnawi on 11/11/2020.
   
 */
-
-"Color: %@, Confidence: %@" = "اللون: %@، معدل الدقة: %@";
+/*
+ اللون: %@
+ اللون: @%
+ */
+"Color: %@" = "اللون: %@";
 
 //UI Objects' names
 "Camera" = "كاميرا";

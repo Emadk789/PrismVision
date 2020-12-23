@@ -68,6 +68,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     }
     private func setAccessibillityLabels() {
         cameraButton.accessibilityLabel = NSLocalizedString("Camera", comment: "The camera Button");
+
         flashButton.accessibilityLabel = NSLocalizedString("Flash", comment: "The flash Button");
         albumButton.accessibilityLabel = NSLocalizedString("Album", comment: "The Album Button");
         settingsButton.accessibilityLabel = NSLocalizedString("Settings", comment: "The Settings Button");
@@ -135,6 +136,14 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         pointerNewleftConstranit = self.pointer.leftAnchor.constraint(equalTo: self.cameraView.leftAnchor, constant: gestureView.center.x);
         pointerNewleftConstranit?.isActive = true;
     }
+    
+    override func updateLabel() {
+        // call super.updateLabel() to run super implementation
+        super.updateLabel()
+        
+        self.label.text = localizedLabelText
+        self.label.isHidden = false
+    }
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -142,12 +151,15 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         dismiss(animated: true, completion: nil);
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
         let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
+
         vc.image = image;
         present(vc, animated: true);
     }
 }
 
 
+
+//extension HomeViewController: ClassificationLabelDelegate { }
 
     
     
