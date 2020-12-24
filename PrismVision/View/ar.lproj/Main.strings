@@ -1,0 +1,38 @@
+// New Localization
+///* Class = "UILabel"; text = "Language"; ObjectID = "E3i-Rb-Dl9"; */
+//"E3i-Rb-Dl9.text" = "Language";
+//
+///* Class = "UILabel"; text = "Title"; ObjectID = "Ech-uz-tly"; */
+//"Ech-uz-tly.text" = "Title";
+//
+///* Class = "UILabel"; text = "Label"; ObjectID = "Gq5-zk-zrr"; */
+//"Gq5-zk-zrr.text" = "Label";
+//
+///* Class = "UITabBarItem"; title = "  Detection"; ObjectID = "HaT-xx-tt0"; */
+//"HaT-xx-tt0.title" = "  Detection";
+//
+///* Class = "UITabBarItem"; title = "Correction"; ObjectID = "NvU-FS-kfj"; */
+//"NvU-FS-kfj.title" = "Correction";
+//
+///* Class = "UILabel"; text = "Detail"; ObjectID = "RC4-wc-ynt"; */
+//"RC4-wc-ynt.text" = "Detail";
+//
+///* Class = "UILabel"; text = "Label"; ObjectID = "dR4-nB-Fsc"; */
+//"dR4-nB-Fsc.text" = "Label";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "E3i-Rb-Dl9"; */
+
+//Old Localization
+"E3i-Rb-Dl9.text" = "Language";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gq5-zk-zrr"; */
+"Gq5-zk-zrr.text" = "نتيجة التعرف";
+
+/* Class = "UITabBarItem"; title = "Color Detection"; ObjectID = "HaT-xx-tt0"; */
+"HaT-xx-tt0.title" = "التعرف";
+
+/* Class = "UITabBarItem"; title = "Correction"; ObjectID = "NvU-FS-kfj"; */
+"NvU-FS-kfj.title" = "التصحيح";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dR4-nB-Fsc"; */
+"dR4-nB-Fsc.text" = "نتيجة التعرف";

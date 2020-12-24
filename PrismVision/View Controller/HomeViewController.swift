@@ -28,8 +28,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     var photoOutput = AVCapturePhotoOutput();
     var tempPointerLocation: CGPoint!;
     
-//    var request: VNCoreMLRequest!;
-    
+
     var pointerHorizantalConstranit: NSLayoutConstraint?;
     var pointerVerticalConstranit: NSLayoutConstraint?;
     var pointerNewTopConstranit: NSLayoutConstraint?;
@@ -41,7 +40,6 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         return pikerView;
     }()
     
-    //TODO: Implemnt the transelation.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,13 +154,3 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         present(vc, animated: true);
     }
 }
-
-
-
-//extension HomeViewController: ClassificationLabelDelegate { }
-
-    
-    
-    
-
-

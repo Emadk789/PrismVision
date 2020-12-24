@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69147A5C253C2840003C1A67 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69147A5B253C283F003C1A67 /* TestViewController.swift */; };
+		6935DBB225943058006EE3E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6935DBB025943058006EE3E7 /* Main.storyboard */; };
 		69509ED7253D9FEA00DFA205 /* HomeViewController + AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69509ED6253D9FE900DFA205 /* HomeViewController + AVFoundation.swift */; };
 		695378A42537613D005942D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A32537613D005942D0 /* AppDelegate.swift */; };
 		695378A62537613D005942D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A52537613D005942D0 /* SceneDelegate.swift */; };
 		695378A82537613D005942D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378A72537613D005942D0 /* HomeViewController.swift */; };
-		695378AB2537613D005942D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695378A92537613D005942D0 /* Main.storyboard */; };
 		695378AD25376145005942D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695378AC25376145005942D0 /* Assets.xcassets */; };
 		695378B025376145005942D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695378AE25376145005942D0 /* LaunchScreen.storyboard */; };
-		695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378B925377D8C005942D0 /* CustomCameraControler.swift */; };
 		695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695378BC25377DE4005942D0 /* PhotoPreviewView.swift */; };
-		695378C725378F54005942D0 /* PrisimVision3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 695378C625378F53005942D0 /* PrisimVision3.mlmodel */; };
 		695B76D0255471F500B922B7 /* UIImage + Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76CF255471F500B922B7 /* UIImage + Extra.swift */; };
 		695B76D72555DE1A00B922B7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76D62555DE1A00B922B7 /* SettingsViewController.swift */; };
 		695B76DA25588CA900B922B7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695B76D925588CA900B922B7 /* UIViewController.swift */; };
@@ -28,25 +25,20 @@
 		696A05D3259335AC0041161E /* GetColorsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A05D2259335AC0041161E /* GetColorsResponse.swift */; };
 		69857BD7258B96A00091E93A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 69857BD6258B96A00091E93A /* Alamofire */; };
 		69901F83255C9B3800C27729 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69901F85255C9B3800C27729 /* Localizable.strings */; };
-		69901F8E255D3A9700C27729 /* PrisimVision27.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */; };
-		69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69147A5B253C283F003C1A67 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		6935DBA0259363D7006EE3E7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6935DBB125943058006EE3E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69509ED6253D9FE900DFA205 /* HomeViewController + AVFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController + AVFoundation.swift"; sourceTree = "<group>"; };
 		695378A02537613D005942D0 /* PrismVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrismVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695378A32537613D005942D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695378A52537613D005942D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		695378A72537613D005942D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		695378AA2537613D005942D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		695378AC25376145005942D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695378AF25376145005942D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695378B125376145005942D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		695378B925377D8C005942D0 /* CustomCameraControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraControler.swift; sourceTree = "<group>"; };
 		695378BC25377DE4005942D0 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
-		695378C625378F53005942D0 /* PrisimVision3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision3.mlmodel; sourceTree = "<group>"; };
 		695B76CF255471F500B922B7 /* UIImage + Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extra.swift"; sourceTree = "<group>"; };
 		695B76D62555DE1A00B922B7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		695B76D925588CA900B922B7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -55,11 +47,9 @@
 		696A05C7259319060041161E /* ImaggaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaggaClient.swift; sourceTree = "<group>"; };
 		696A05CE259335300041161E /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		696A05D2259335AC0041161E /* GetColorsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColorsResponse.swift; sourceTree = "<group>"; };
-		69901F80255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		69901F81255BE01E00C27729 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		69901F84255C9B3800C27729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision27.mlmodel; sourceTree = "<group>"; };
-		69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PrisimVision5.mlmodel; sourceTree = "<group>"; };
+		69B1463D2594322600E4949C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +64,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6935DBA525942988006EE3E7 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */,
+				695378A72537613D005942D0 /* HomeViewController.swift */,
+				69509ED6253D9FE900DFA205 /* HomeViewController + AVFoundation.swift */,
+				6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */,
+				695378BC25377DE4005942D0 /* PhotoPreviewView.swift */,
+				695B76D62555DE1A00B922B7 /* SettingsViewController.swift */,
+				695B76CE255471D700B922B7 /* Extensions */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		6935DBAD25942E1C006EE3E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				695378AC25376145005942D0 /* Assets.xcassets */,
+				6935DBB025943058006EE3E7 /* Main.storyboard */,
+				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		695378972537613C005942D0 = {
 			isa = PBXGroup;
 			children = (
@@ -95,23 +109,10 @@
 			children = (
 				695378A32537613D005942D0 /* AppDelegate.swift */,
 				695378A52537613D005942D0 /* SceneDelegate.swift */,
-				695378A72537613D005942D0 /* HomeViewController.swift */,
-				69509ED6253D9FE900DFA205 /* HomeViewController + AVFoundation.swift */,
-				695378B925377D8C005942D0 /* CustomCameraControler.swift */,
-				695378A92537613D005942D0 /* Main.storyboard */,
-				695B76D62555DE1A00B922B7 /* SettingsViewController.swift */,
-				69147A5B253C283F003C1A67 /* TestViewController.swift */,
-				695378AC25376145005942D0 /* Assets.xcassets */,
-				695378AE25376145005942D0 /* LaunchScreen.storyboard */,
-				695378B125376145005942D0 /* Info.plist */,
-				69BE0F042550908800B8CFAF /* PrisimVision5.mlmodel */,
-				69901F8D255D3A9600C27729 /* PrisimVision27.mlmodel */,
-				695378C625378F53005942D0 /* PrisimVision3.mlmodel */,
-				695378BC25377DE4005942D0 /* PhotoPreviewView.swift */,
-				6964C6412541B41D0063318E /* ImagePickerPhotoPreviewController.swift */,
-				6964C6472542EE680063318E /* HomeAndImagePickerSuperViewController.swift */,
-				695B76CE255471D700B922B7 /* Extensions */,
+				6935DBA525942988006EE3E7 /* View Controller */,
 				696A05CC2593348C0041161E /* Networking */,
+				6935DBAD25942E1C006EE3E7 /* View */,
+				695378B125376145005942D0 /* Info.plist */,
 				69901F85255C9B3800C27729 /* Localizable.strings */,
 			);
 			path = PrismVision;
@@ -217,9 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				695378B025376145005942D0 /* LaunchScreen.storyboard in Resources */,
+				6935DBB225943058006EE3E7 /* Main.storyboard in Resources */,
 				69901F83255C9B3800C27729 /* Localizable.strings in Resources */,
 				695378AD25376145005942D0 /* Assets.xcassets in Resources */,
-				695378AB2537613D005942D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,16 +234,11 @@
 				695378A82537613D005942D0 /* HomeViewController.swift in Sources */,
 				695378A42537613D005942D0 /* AppDelegate.swift in Sources */,
 				696A05C8259319060041161E /* ImaggaClient.swift in Sources */,
-				69147A5C253C2840003C1A67 /* TestViewController.swift in Sources */,
-				69901F8E255D3A9700C27729 /* PrisimVision27.mlmodel in Sources */,
 				6964C6482542EE690063318E /* HomeAndImagePickerSuperViewController.swift in Sources */,
-				695378BA25377D8C005942D0 /* CustomCameraControler.swift in Sources */,
 				696A05D3259335AC0041161E /* GetColorsResponse.swift in Sources */,
-				69BE0F052550908900B8CFAF /* PrisimVision5.mlmodel in Sources */,
 				695378BD25377DE4005942D0 /* PhotoPreviewView.swift in Sources */,
 				695B76D72555DE1A00B922B7 /* SettingsViewController.swift in Sources */,
 				6964C6422541B41D0063318E /* ImagePickerPhotoPreviewController.swift in Sources */,
-				695378C725378F54005942D0 /* PrisimVision3.mlmodel in Sources */,
 				695B76D0255471F500B922B7 /* UIImage + Extra.swift in Sources */,
 				696A05CF259335300041161E /* UploadResponse.swift in Sources */,
 				69509ED7253D9FEA00DFA205 /* HomeViewController + AVFoundation.swift in Sources */,
@@ -254,11 +250,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		695378A92537613D005942D0 /* Main.storyboard */ = {
+		6935DBB025943058006EE3E7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				695378AA2537613D005942D0 /* Base */,
-				69901F80255BE01E00C27729 /* ar */,
+				6935DBB125943058006EE3E7 /* Base */,
+				69B1463D2594322600E4949C /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
