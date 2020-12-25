@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  PrismVision
+
+  Created by Emad Albarnawi on 11/11/2020.
+  
+*/
+
+//
+"Color: %@" = "Color: %@";
+
+//UI Objects' names
+"Camera" = "Camera";
+"Flash" = "Flash";
+"Album" = "Album";
+"Pointer" = "Pointer";
+"Settings" = "Settings";
+
+// Settings
+"Language" = "Language";
+
+
+//List down the colors' names we have!
+"Black"         = "Black";
+"White"         = "White";
+"Yellow"        = "Yellow";
+"Beige"         = "Beige";
+"Hot Pink"      = "Bright Pink"; //
+"Magenta"       = "Magenta";
+"Red"           = "Red";
+"Teal"          = "Turquoise"; //
+"Maroon"        = "Maroon";
+"Lavender"      = "Lavender";
+"Blue"          = "Blue";
+"Light Blue"    = "Light Blue";
+"Mauve"         = "Crimson"; //
+"Turquoise"     = "Turquoise";
+"Brown"         = "Brown";
+"Navy Blue"     = "Navy Blue";
+"Purple"        = "Purple";
+"Grey"          = "Grey";
+"Skin"          = "Skin";
+"Orange"        = "Orange";
+"Light Brown"   = "Light Brown";
+"Olive Green"   = "Olive Green";
+"Green"         = "Green";
+"Dark Green"    = "Dark Green";
+"Light Green"   = "Light Green";
+"Gold"          = "Gold";
+"Pink"          = "Pink";
+"Violet"        = "Violet";
+"Plum"          = "Plum";
+"Light Grey"    = "Light Grey";
+"Greige"        = "Grey Green"; //
+"Light Pink"    = "Light Pink";

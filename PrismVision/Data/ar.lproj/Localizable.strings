@@ -1,0 +1,57 @@
+/*
+  Localizable.strings
+  PrismVision
+
+  Created by Emad Albarnawi on 11/11/2020.
+  
+*/
+/*
+ اللون: %@
+ اللون: @%
+ */
+"Color: %@" = "اللون: %@";
+
+//UI Objects' names
+"Camera" = "كاميرا";
+"Flash" = "الضوء الخلفي";
+"Album" = "الاستوديو";
+"Pointer" = "المؤشر";
+"Settings" = "الاعدادات";
+
+// Settings
+"Language" = "اللغة";
+
+
+//List down the colors' names we have!
+"Black"         = "اسود";
+"White"         = "أبيض";
+"Yellow"        = "أصفر";
+"Beige"         = "بيج";
+"Hot Pink"      = "فوشي";
+"Magenta"       = "أرجواني";
+"Red"           = "أحمر";
+"Teal"          = "تركوازي";
+"Maroon"        = "عودي";
+"Lavender"      = "ليلكي";
+"Blue"          = "أزرق";
+"Light Blue"    = "سماوي";
+"Mauve"         = "وردي غامق";
+"Turquoise"     = "تركوازي";
+"Brown"         = "بني";
+"Navy Blue"     = "كحلي";
+"Purple"        = "بنفسجي";
+"Grey"          = "رمادي";
+"Skin"          = "لحمي";
+"Orange"        = "برتقالي";
+"Light Brown"   = "بني فاتح";
+"Olive Green"   = "أخضر زيتوني";
+"Green"         = "أخضر";
+"Dark Green"    = "أخضر غامق";
+"Light Green"   = "فستقي";
+"Gold"          = "ذهبي";
+"Pink"          = "وردي";
+"Violet"        = "بنفسجي";
+"Plum"          = "باذنجاني";
+"Light Grey"    = "رمادي فاتح";
+"Greige"        = "أخضر زيتوني";
+"Light Pink"    = "وردي فاتح";

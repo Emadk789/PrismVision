@@ -13,6 +13,7 @@ import Alamofire
 class HomeAndImagePickerSuperViewController: UIViewController {
     var imaggaParentColor: String = "";
     var localizedLabelText: String = ""
+    var closestPaletteColorHTMLCode: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,8 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         if let result = result {
             // Get the color with the highest persentage, i.e., index 0.
             imaggaParentColor = result.result.colors.imageColors[0].closestPaletteColorParent
+            let color = hexStringToUIColor(hex: result.result.colors.imageColors[0].closestPaletteColorHTMLCode)
+            closestPaletteColorHTMLCode = color
             updateLabel()
         }
         //TODO: Show Error Message!
@@ -61,4 +64,26 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName);
         
     }
+}
+
+func hexStringToUIColor (hex:String) -> UIColor {
+    var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+    if (cString.hasPrefix("#")) {
+        cString.remove(at: cString.startIndex)
+    }
+
+    if ((cString.count) != 6) {
+        return UIColor.gray
+    }
+
+    var rgbValue:UInt64 = 0
+    Scanner(string: cString).scanHexInt64(&rgbValue)
+
+    return UIColor(
+        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+        alpha: CGFloat(1.0)
+    )
 }

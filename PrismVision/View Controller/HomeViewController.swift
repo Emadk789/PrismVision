@@ -20,6 +20,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var colorPrivewImageView: UIImageView!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -52,6 +53,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setUpPointer(pointer);
         
         setAccessibillityLabels();
+        
+        colorPrivewImageView.layer.cornerRadius = colorPrivewImageView.frame.size.width/2
+
 
     }
     private func setupZPositions() {
@@ -61,7 +65,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         flashButton.layer.zPosition = 1;
         albumButton.layer.zPosition = 1;
         settingsButton.layer.zPosition = 1;
-        
+        colorPrivewImageView.layer.zPosition = 1
         
     }
     private func setAccessibillityLabels() {
@@ -141,6 +145,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         self.label.text = localizedLabelText
         self.label.isHidden = false
+        
+        colorPrivewImageView.backgroundColor = closestPaletteColorHTMLCode
     }
 }
 

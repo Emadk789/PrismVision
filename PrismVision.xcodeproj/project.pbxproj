@@ -112,8 +112,7 @@
 				6935DBA525942988006EE3E7 /* View Controller */,
 				696A05CC2593348C0041161E /* Networking */,
 				6935DBAD25942E1C006EE3E7 /* View */,
-				695378B125376145005942D0 /* Info.plist */,
-				69901F85255C9B3800C27729 /* Localizable.strings */,
+				69B146412594352300E4949C /* Data */,
 			);
 			path = PrismVision;
 			sourceTree = "<group>";
@@ -151,6 +150,15 @@
 				696A05C7259319060041161E /* ImaggaClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		69B146412594352300E4949C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				695378B125376145005942D0 /* Info.plist */,
+				69901F85255C9B3800C27729 /* Localizable.strings */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ363JP6R5;
-				INFOPLIST_FILE = PrismVision/Info.plist;
+				INFOPLIST_FILE = PrismVision/Data/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,7 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ363JP6R5;
-				INFOPLIST_FILE = PrismVision/Info.plist;
+				INFOPLIST_FILE = PrismVision/Data/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
