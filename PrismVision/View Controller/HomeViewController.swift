@@ -114,7 +114,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
               
               addNewConstraints(to: gestureView);
               
-              capturePhoto();
+//              capturePhoto();
           }
         
           gestureView.center = CGPoint(

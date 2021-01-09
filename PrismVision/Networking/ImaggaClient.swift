@@ -57,7 +57,7 @@ class ImaggaClient {
     }
     
     func getColors<DecodableResponse: Decodable>(uploadID: String, for decodableResponseType: DecodableResponse.Type, completion: @escaping (DecodableResponse?, Error?) -> Void) {
-        let parameters = ["image_upload_id": uploadID]
+        let parameters = ["image_upload_id": uploadID, "deterministic": 1] as [String : Any]
         AF.request(Endpoints.getColors.stringURL, parameters: parameters, headers: [Auth.authorization.rawValue.capitalized: Auth.authorization.stringValue]).responseJSON { (response) in
             let decoder = JSONDecoder()
             do {
