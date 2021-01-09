@@ -164,7 +164,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Mll-tH-UMw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xaa-vG-p9c">
+                    <tabBar key="tabBar" hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xaa-vG-p9c">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
