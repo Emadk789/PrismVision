@@ -21,6 +21,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var colorPrivewImageView: UIImageView!
+    @IBOutlet weak var forTestingActualColor: UILabel!
+    @IBOutlet weak var forTesting: UILabel!
+    @IBOutlet weak var forTestingStack: UIStackView!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -40,6 +43,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         pikerView.sourceType = .photoLibrary;
         return pikerView;
     }()
+    
     
     
     override func viewDidLoad() {
@@ -67,6 +71,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         settingsButton.layer.zPosition = 1;
         colorPrivewImageView.layer.zPosition = 1
         
+        forTestingActualColor.layer.zPosition = 1
+        forTestingStack.layer.zPosition = 1
     }
     private func setAccessibillityLabels() {
         cameraButton.accessibilityLabel = NSLocalizedString("Camera", comment: "The camera Button");
@@ -147,6 +153,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         self.label.isHidden = false
         
         colorPrivewImageView.backgroundColor = closestPaletteColorHTMLCode
+        forTesting.isHidden = false
+        forTestingActualColor.isHidden = false
+        forTestingActualColor.text = "Actual Detected Color: \(imaggaParentColor2)"
     }
 }
 

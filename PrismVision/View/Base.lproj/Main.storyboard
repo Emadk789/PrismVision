@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-zk-zrr">
-                                <rect key="frame" x="166.5" y="597" width="42" height="21"/>
+                                <rect key="frame" x="167" y="597.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -76,11 +76,30 @@
                                     <action selector="albumButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D1p-2u-Tsr"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Bx-Jo-ziV">
+                                <rect key="frame" x="8" y="461" width="358" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBA-Ys-pv6">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWS-Gs-vR2">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3IG-ng-V8C" firstAttribute="top" secondItem="3Bx-Jo-ziV" secondAttribute="bottom" constant="62" id="3lc-Th-OBb"/>
                             <constraint firstItem="h6G-vV-xgO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8MJ-ry-sg5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Bx-Jo-ziV" secondAttribute="trailing" constant="9" id="8to-tp-lH8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gq5-zk-zrr" secondAttribute="bottom" id="BZW-Rl-jX3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kXg-UW-nvP" secondAttribute="bottom" constant="45" id="ByE-f3-ws7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NCu-dY-yc8" secondAttribute="bottom" constant="30" id="KKP-Rt-Jty"/>
@@ -88,6 +107,7 @@
                             <constraint firstItem="NCu-dY-yc8" firstAttribute="leading" secondItem="3IG-ng-V8C" secondAttribute="trailing" constant="50" id="Xcp-Lb-fkt"/>
                             <constraint firstItem="h6G-vV-xgO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Zb5-Jx-pk1"/>
                             <constraint firstItem="Gq5-zk-zrr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dbE-cm-bc4"/>
+                            <constraint firstItem="3Bx-Jo-ziV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="g4q-6K-z7F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xN-ws-4aO" secondAttribute="bottom" constant="30" id="iNp-A6-V4L"/>
                             <constraint firstItem="kXg-UW-nvP" firstAttribute="leading" secondItem="7xN-ws-4aO" secondAttribute="trailing" constant="48.5" id="j1B-gY-Ivn"/>
                             <constraint firstItem="NCu-dY-yc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qkU-id-bhj"/>
@@ -101,6 +121,9 @@
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
                         <outlet property="colorPrivewImageView" destination="NCu-dY-yc8" id="rZF-aS-b6i"/>
                         <outlet property="flashButton" destination="kXg-UW-nvP" id="wNc-5J-UEr"/>
+                        <outlet property="forTesting" destination="rBA-Ys-pv6" id="W9F-mt-xlS"/>
+                        <outlet property="forTestingActualColor" destination="CWS-Gs-vR2" id="EJm-Gs-neL"/>
+                        <outlet property="forTestingStack" destination="3Bx-Jo-ziV" id="dLu-e6-4xi"/>
                         <outlet property="label" destination="Gq5-zk-zrr" id="CCE-ar-BiV"/>
                         <outlet property="pointer" destination="qru-uR-9bR" id="qKy-bk-l7D"/>
                         <outlet property="settingsButton" destination="h6G-vV-xgO" id="64V-YT-h01"/>
@@ -109,55 +132,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556" y="102.99850074962519"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="61o-Q4-g9e">
-            <objects>
-                <viewController id="53z-U1-dyc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="K7G-LT-tUg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vbj-g7-gQj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="D4G-lo-Cnm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A0Y-cs-Y92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="706" y="-231"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="Qu9-kf-Uk2">
-            <objects>
-                <viewController id="gZc-2P-cpJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CVM-DS-UkG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rbJ-UK-74D"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uaX-EX-sbK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iNy-LB-2aK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="706" y="-839"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="mpX-mj-gcq">
-            <objects>
-                <tabBarController id="fnb-Vw-vKC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" alpha="0.10000000000000001" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7O1-Ve-e5v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="gZc-2P-cpJ" kind="relationship" relationship="viewControllers" id="BI1-IM-hJq"/>
-                        <segue destination="53z-U1-dyc" kind="relationship" relationship="viewControllers" id="CnE-X4-rG8"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vkU-Y5-oi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-215" y="-535"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zUp-2a-4qF">
@@ -355,7 +329,7 @@
     <resources>
         <image name="CameraButton" width="72" height="72"/>
         <image name="CameraButton2" width="70" height="70"/>
-        <image name="Settings" width="36" height="36"/>
+        <image name="Settings" width="72" height="72"/>
         <image name="album" width="50" height="50"/>
         <image name="flash" width="50" height="50"/>
         <image name="icons8-third-eye-symbol-50 1" width="25" height="25"/>

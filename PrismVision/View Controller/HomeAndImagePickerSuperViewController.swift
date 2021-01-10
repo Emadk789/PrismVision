@@ -12,8 +12,10 @@ import Alamofire
 
 class HomeAndImagePickerSuperViewController: UIViewController {
     var imaggaParentColor: String = "";
+    var imaggaParentColor2: String = ""
     var localizedLabelText: String = ""
     var closestPaletteColorHTMLCode: UIColor?
+    var paletteHexStringCode: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,9 @@ class HomeAndImagePickerSuperViewController: UIViewController {
             // Get the color with the highest persentage, i.e., index 0.
             imaggaParentColor = result.result.colors.imageColors[0].closestPaletteColorParent
             let color = hexStringToUIColor(hex: result.result.colors.imageColors[0].closestPaletteColorHTMLCode)
+            imaggaParentColor2 = result.result.colors.imageColors[0].closestPaletteColor
+            paletteHexStringCode = result.result.colors.imageColors[0].closestPaletteColorHTMLCode
+            print("imaggaParentColor2", imaggaParentColor2)
             closestPaletteColorHTMLCode = color
             updateLabel()
         }
@@ -60,8 +65,9 @@ class HomeAndImagePickerSuperViewController: UIViewController {
     // This function is overriden in the subclasses
     func updateLabel() {
         let formatString = NSLocalizedString("Color: %@", comment: "Classification Lable");
-        let localizedColorName = NSLocalizedString(self.imaggaParentColor.capitalized, comment: "")
-        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName);
+        let localizedColorName = NSLocalizedString(self.imaggaParentColor2, comment: "")
+        print("localizedColorName", localizedColorName)
+        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + ", Hex: \(paletteHexStringCode)";
         
     }
 }
