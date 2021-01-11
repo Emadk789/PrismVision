@@ -17,6 +17,7 @@ class HomeAndImagePickerSuperViewController: UIViewController {
     var closestPaletteColorHTMLCode: UIColor?
     var paletteHexStringCode: String = ""
     
+    var testImage2: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +40,6 @@ class HomeAndImagePickerSuperViewController: UIViewController {
             print("Could not get JPEG representation of UIImage")
             return
         }
-        
         ImaggaClient.shared.getUploadID(data: imageData, for: UploadResponse.self, completion: self.handleGetUploadID(response:error:))
         
     }

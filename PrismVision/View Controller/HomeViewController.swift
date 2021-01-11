@@ -32,6 +32,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     var photoOutput = AVCapturePhotoOutput();
     var tempPointerLocation: CGPoint!;
     
+    var testImage: UIImage?
+    
 
     var pointerHorizantalConstranit: NSLayoutConstraint?;
     var pointerVerticalConstranit: NSLayoutConstraint?;
@@ -149,6 +151,12 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         // call super.updateLabel() to run super implementation
         super.updateLabel()
         
+        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
+        
+        
+        vc.image = testImage
+
+        present(vc, animated: true, completion: nil)
         self.label.text = localizedLabelText
         self.label.isHidden = false
         

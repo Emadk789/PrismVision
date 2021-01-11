@@ -94,6 +94,9 @@ extension HomeViewController {
 
         let resizedImage = resizeImage(image: previewImage!, targetSize: CGSize(width: view.bounds.width, height: view.bounds.height));
 
+        
+        testImage = imageUnderPointer(image: resizedImage, pointer: pointer);
+        
         getColors(image: resizedImage)
 
     }
