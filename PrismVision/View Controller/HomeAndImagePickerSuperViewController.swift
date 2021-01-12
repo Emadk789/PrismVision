@@ -28,7 +28,7 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         let screenHeight = view.bounds.height;
         let correction2 = pointer.center.y * imageHeight / screenHeight;
 
-        let rect = CGRect(x: pointer.center.x, y: correction2, width: pointer.bounds.width, height: pointer.bounds.height);
+        let rect = CGRect(x: pointer.frame.minX, y: pointer.frame.minY, width: pointer.bounds.width, height: pointer.bounds.height);
 
         let newImage = resizedImage.crop(rect: rect);
         return newImage;
@@ -68,6 +68,10 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         let localizedColorName = NSLocalizedString(self.imaggaParentColor2, comment: "")
         print("localizedColorName", localizedColorName)
         localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + ", Hex: \(paletteHexStringCode)";
+        
+        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
+        vc.image = testImage2
+        present(vc, animated: true, completion: nil)
         
     }
 }

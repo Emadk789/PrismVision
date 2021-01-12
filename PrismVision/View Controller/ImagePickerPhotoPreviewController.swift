@@ -42,16 +42,18 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         
         gesture.setTranslation(.zero, in: view);
         if gesture.state == .ended {
-            updateConstraints(to: gestureView);
+//            updateConstraints(to: gestureView);
             var resizedImage = (image?.resizeImage(targetSize: CGSize(width: view.bounds.width, height: view.bounds.height)))!
             
             // TODO: Take a screenshout of the image and pass it to the model.
-
+            pointer.isHidden = true
             resizedImage = view.makeSnapshot()!;
-
+            testImage2 = resizedImage
             let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
-            
-            getColors(image: newImage!)
+            testImage2 = newImage
+            updateLabel()
+            pointer.isHidden = false
+//            getColors(image: newImage!)
         }
         
     }

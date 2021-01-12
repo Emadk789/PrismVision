@@ -87,7 +87,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     }
 
     override func setupPointerConstraints(_ pointer: UIImageView) {
-            pointer.translatesAutoresizingMaskIntoConstraints = false;
+        pointer.translatesAutoresizingMaskIntoConstraints = false;
         pointerHorizantalConstranit = pointer.centerXAnchor.constraint(equalTo: view.centerXAnchor);
         pointerHorizantalConstranit?.isActive = true;
         pointerVerticalConstranit = pointer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -120,7 +120,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         }
         if sender.state == .ended {
               
-              addNewConstraints(to: gestureView);
+//              addNewConstraints(to: gestureView);
               
 //              capturePhoto();
           }
@@ -151,12 +151,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         // call super.updateLabel() to run super implementation
         super.updateLabel()
         
-        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
         
-        
-        vc.image = testImage
 
-        present(vc, animated: true, completion: nil)
+        
         self.label.text = localizedLabelText
         self.label.isHidden = false
         
