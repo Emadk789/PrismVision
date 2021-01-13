@@ -24,6 +24,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBOutlet weak var forTestingActualColor: UILabel!
     @IBOutlet weak var forTesting: UILabel!
     @IBOutlet weak var forTestingStack: UIStackView!
+    @IBOutlet weak var cameraUIimage: UIImageView!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -96,6 +97,10 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
+//        let resizedImage2 = cameraView.makeSnapshot()!;
+//        testImage2 = resizedImage2
+////        testImage = imageUnderPointer(image: resizedImage2, pointer: pointer);
+//        updateLabel()
         capturePhoto();
     }
     @IBAction func flashButtonClicked(_ sender: Any) {
@@ -152,6 +157,16 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         super.updateLabel()
         
         
+        
+//        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
+//        
+//        
+//        let button2 = UIButton()
+//        button2.frame = CGRect(x: pointer.frame.minX, y: pointer.frame.minY, width: 30, height: 30)
+//            button2.clipsToBounds = true
+//            button2.setTitle("Tesing Button", for: .normal)
+//        cameraUIimage.addSubview(button2)
+//        vc.image = testImage2
 
         
         self.label.text = localizedLabelText

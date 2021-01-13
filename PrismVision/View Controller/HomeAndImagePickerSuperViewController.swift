@@ -69,9 +69,10 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         print("localizedColorName", localizedColorName)
         localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + ", Hex: \(paletteHexStringCode)";
         
-        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
-        vc.image = testImage2
-        present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
+//        
+//        vc.image = testImage2
+//        present(vc, animated: true, completion: nil)
         
     }
 }

@@ -93,24 +93,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi3-FH-OMj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3IG-ng-V8C" firstAttribute="top" secondItem="3Bx-Jo-ziV" secondAttribute="bottom" constant="62" id="3lc-Th-OBb"/>
                             <constraint firstItem="h6G-vV-xgO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8MJ-ry-sg5"/>
+                            <constraint firstAttribute="trailing" secondItem="yi3-FH-OMj" secondAttribute="trailing" id="8nQ-Df-HWQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Bx-Jo-ziV" secondAttribute="trailing" constant="9" id="8to-tp-lH8"/>
+                            <constraint firstAttribute="bottom" secondItem="yi3-FH-OMj" secondAttribute="bottom" id="9K6-iB-7gK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gq5-zk-zrr" secondAttribute="bottom" id="BZW-Rl-jX3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kXg-UW-nvP" secondAttribute="bottom" constant="45" id="ByE-f3-ws7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NCu-dY-yc8" secondAttribute="bottom" constant="30" id="KKP-Rt-Jty"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3IG-ng-V8C" secondAttribute="bottom" constant="45" id="LdD-r6-fRO"/>
                             <constraint firstItem="NCu-dY-yc8" firstAttribute="leading" secondItem="3IG-ng-V8C" secondAttribute="trailing" constant="50" id="Xcp-Lb-fkt"/>
                             <constraint firstItem="h6G-vV-xgO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Zb5-Jx-pk1"/>
+                            <constraint firstItem="yi3-FH-OMj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bjM-eD-Nuq"/>
                             <constraint firstItem="Gq5-zk-zrr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dbE-cm-bc4"/>
                             <constraint firstItem="3Bx-Jo-ziV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="g4q-6K-z7F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xN-ws-4aO" secondAttribute="bottom" constant="30" id="iNp-A6-V4L"/>
                             <constraint firstItem="kXg-UW-nvP" firstAttribute="leading" secondItem="7xN-ws-4aO" secondAttribute="trailing" constant="48.5" id="j1B-gY-Ivn"/>
                             <constraint firstItem="NCu-dY-yc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qkU-id-bhj"/>
+                            <constraint firstItem="yi3-FH-OMj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x2Z-KR-3VS"/>
                             <constraint firstItem="7xN-ws-4aO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xHk-0Y-fa0"/>
                         </constraints>
                     </view>
@@ -118,6 +125,7 @@
                     <connections>
                         <outlet property="albumButton" destination="3IG-ng-V8C" id="Y5s-4X-Jun"/>
                         <outlet property="cameraButton" destination="7xN-ws-4aO" id="5Hm-lg-jzv"/>
+                        <outlet property="cameraUIimage" destination="yi3-FH-OMj" id="51x-C3-URr"/>
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
                         <outlet property="colorPrivewImageView" destination="NCu-dY-yc8" id="rZF-aS-b6i"/>
                         <outlet property="flashButton" destination="kXg-UW-nvP" id="wNc-5J-UEr"/>
