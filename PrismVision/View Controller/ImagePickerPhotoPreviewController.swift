@@ -40,22 +40,27 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         
         gestureView.center = CGPoint(x: gestureView.center.x + transition.x, y: gestureView.center.y + transition.y);
         
-        gesture.setTranslation(.zero, in: view);
-        if gesture.state == .ended {
-//            updateConstraints(to: gestureView);
-            var resizedImage = (image?.resizeImage(targetSize: CGSize(width: view.bounds.width, height: view.bounds.height)))!
-            
-            // TODO: Take a screenshout of the image and pass it to the model.
-            pointer.isHidden = true
-            resizedImage = view.makeSnapshot()!;
-            testImage2 = resizedImage
-            let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
-            testImage2 = newImage
-            updateLabel()
-            pointer.isHidden = false
-//            getColors(image: newImage!)
+        if gesture.state == .changed {
+            pointerHorizantalConstranit?.constant += transition.x
+            pointerVerticalConstranit?.constant += transition.y
         }
-        
+        if gesture.state == .ended {
+            
+            endGestureHandelr()
+            
+        }
+        gesture.setTranslation(.zero, in: view);
+    }
+    func endGestureHandelr() {
+        var resizedImage = (image?.resizeImage(targetSize: CGSize(width: view.bounds.width, height: view.bounds.height)))!
+        resizedImage = view.makeSnapshot()!;
+        testImage2 = resizedImage
+        let newImage = imageUnderPointer(image: resizedImage, pointer: pointer);
+        testImage2 = newImage
+        callGetColors(image: newImage!)
+    }
+    func callGetColors(image: UIImage) {
+        getColors(image: image)
     }
     override func updateLabel() {
         // call super.updateLabel() to run super implementation

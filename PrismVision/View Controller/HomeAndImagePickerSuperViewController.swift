@@ -67,7 +67,7 @@ class HomeAndImagePickerSuperViewController: UIViewController {
         let formatString = NSLocalizedString("Color: %@", comment: "Classification Lable");
         let localizedColorName = NSLocalizedString(self.imaggaParentColor2, comment: "")
         print("localizedColorName", localizedColorName)
-        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + ", Hex: \(paletteHexStringCode)";
+        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + "  |  \(paletteHexStringCode)";
         
 //        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
 //        

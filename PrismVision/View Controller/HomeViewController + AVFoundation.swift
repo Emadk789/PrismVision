@@ -99,28 +99,12 @@ extension HomeViewController {
 
         let resizedImage2 = cameraUIimage.makeSnapshot()!;
         let resizedImage3 = imageUnderPointer(image: resizedImage2, pointer: pointer)
-        let button: UIButton = {
-            let rect = CGRect(x: pointer.frame.minX, y: pointer.frame.minY, width: 30, height: 30)
-            let button = UIButton(frame: rect)
-            button.setTitle("Te", for: .normal)
-            button.backgroundColor = .systemRed
-            button.clipsToBounds = true
-            return button
-            
-        }()
-//        let button2 = UIButton()
-//        button2.frame = CGRect(x: pointer.frame.minX, y: pointer.frame.minY, width: 30, height: 30)
-//            button2.clipsToBounds = true
-//            button2.setTitle("Tesing Button", for: .normal)
-//        button2.backgroundColor = .systemBlue
-//        button2.tintColor = .black
-//        cameraUIimage.addSubview(button2)
-//        cameraUIimage.addSubview(button)
+
         testImage2 = resizedImage3
 //        testImage = imageUnderPointer(image: resizedImage2, pointer: pointer);
 //        print((cameraUIimage.subviews))
 //        updateLabel()
-        getColors(image: resizedImage)
+        getColors(image: resizedImage3!)
 
     }
     

@@ -123,17 +123,21 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
           guard let gestureView = pointer else {
           return
         }
-        if sender.state == .ended {
-              
-//              addNewConstraints(to: gestureView);
-              
-//              capturePhoto();
-          }
+        if sender.state == .changed {
+            pointerHorizantalConstranit?.constant += translation.x
+            pointerVerticalConstranit?.constant += translation.y
+        }
+//        if sender.state == .ended {
+//
+////              addNewConstraints(to: gestureView);
+//
+////              capturePhoto();
+//          }
         
-          gestureView.center = CGPoint(
-              x: gestureView.center.x + translation.x,
-              y: gestureView.center.y + translation.y
-          )
+//          gestureView.center = CGPoint(
+//              x: gestureView.center.x + translation.x,
+//              y: gestureView.center.y + translation.y
+//          )
           
         sender.setTranslation(.zero, in: view)
     }
