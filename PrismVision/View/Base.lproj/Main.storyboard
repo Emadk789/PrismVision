@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -144,13 +145,13 @@
                         <outlet property="cameraButton" destination="7xN-ws-4aO" id="5Hm-lg-jzv"/>
                         <outlet property="cameraUIimage" destination="yi3-FH-OMj" id="51x-C3-URr"/>
                         <outlet property="cameraView" destination="8bC-Xf-vdC" id="Y0X-lz-NaH"/>
+                        <outlet property="colorPreviewLabel" destination="Gq5-zk-zrr" id="CCE-ar-BiV"/>
                         <outlet property="colorPrivewImageView" destination="NCu-dY-yc8" id="rZF-aS-b6i"/>
                         <outlet property="flashButton" destination="kXg-UW-nvP" id="wNc-5J-UEr"/>
                         <outlet property="forTesting" destination="rBA-Ys-pv6" id="W9F-mt-xlS"/>
                         <outlet property="forTestingActualColor" destination="CWS-Gs-vR2" id="EJm-Gs-neL"/>
                         <outlet property="forTestingStack" destination="3Bx-Jo-ziV" id="dLu-e6-4xi"/>
                         <outlet property="hexLabel" destination="5NS-fN-CtX" id="l3W-O7-AlH"/>
-                        <outlet property="label" destination="Gq5-zk-zrr" id="CCE-ar-BiV"/>
                         <outlet property="pointer" destination="qru-uR-9bR" id="qKy-bk-l7D"/>
                         <outlet property="seperatorLabel" destination="qzd-2h-TvZ" id="mu9-9U-soI"/>
                         <outlet property="settingsButton" destination="h6G-vV-xgO" id="64V-YT-h01"/>
@@ -257,8 +258,20 @@
                                     <constraint firstAttribute="width" constant="30" id="ajw-HM-mxH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR4-nB-Fsc">
-                                <rect key="frame" x="167" y="630" width="41.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgv-kp-OsA">
+                                <rect key="frame" x="136" y="630.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paO-iE-oUP">
+                                <rect key="frame" x="185.5" y="630.5" width="4" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0S-Ys-9K3">
+                                <rect key="frame" x="197.5" y="630.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -267,23 +280,63 @@
                         <viewLayoutGuide key="safeArea" id="Tf2-NO-zj7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="g0S-Ys-9K3" firstAttribute="leading" secondItem="paO-iE-oUP" secondAttribute="trailing" constant="8" id="2c8-89-9hx"/>
+                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="bottom" secondItem="paO-iE-oUP" secondAttribute="bottom" constant="16" id="4mT-zf-bZd"/>
+                            <constraint firstItem="paO-iE-oUP" firstAttribute="centerX" secondItem="okw-gL-8x5" secondAttribute="centerX" id="Dmi-P7-s3J"/>
+                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="bottom" secondItem="g0S-Ys-9K3" secondAttribute="bottom" constant="16" id="GDk-Gn-7EG"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="bottom" secondItem="Tf2-NO-zj7" secondAttribute="bottom" id="J3s-ii-6PW"/>
+                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="bottom" secondItem="wgv-kp-OsA" secondAttribute="bottom" constant="16" id="Sz0-cz-T5E"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="top" secondItem="Tf2-NO-zj7" secondAttribute="top" id="TjA-L2-cGg"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="leading" secondItem="Tf2-NO-zj7" secondAttribute="leading" id="Xnb-wh-XnX"/>
-                            <constraint firstItem="Tf2-NO-zj7" firstAttribute="bottom" secondItem="dR4-nB-Fsc" secondAttribute="bottom" constant="16" id="kq5-J2-m4b"/>
                             <constraint firstItem="UgX-fD-hWI" firstAttribute="trailing" secondItem="Tf2-NO-zj7" secondAttribute="trailing" id="r9l-Gf-4Aq"/>
-                            <constraint firstItem="dR4-nB-Fsc" firstAttribute="centerX" secondItem="okw-gL-8x5" secondAttribute="centerX" id="tt6-fR-W0e"/>
+                            <constraint firstItem="paO-iE-oUP" firstAttribute="leading" secondItem="wgv-kp-OsA" secondAttribute="trailing" constant="8" id="uG7-tT-Bte"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorPreviewLabel" destination="wgv-kp-OsA" id="mKh-rO-wRf"/>
+                        <outlet property="hexLabel" destination="g0S-Ys-9K3" id="1lV-6v-1lY"/>
                         <outlet property="imageView" destination="UgX-fD-hWI" id="QcH-8e-JGJ"/>
                         <outlet property="pointer" destination="nVF-ty-Ftb" id="Egu-Vh-AFt"/>
-                        <outlet property="privewLabel" destination="dR4-nB-Fsc" id="sPV-OY-2dJ"/>
+                        <outlet property="seperatorLabel" destination="paO-iE-oUP" id="lBb-eE-UhE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHM-U6-lcx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198" y="519"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="K1D-mJ-ZgG">
+            <objects>
+                <collectionViewController id="9OT-u7-t14" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="5bA-8M-5gZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NkX-Qq-iXC">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N4J-Qa-U2E">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Mc-Fv-uU2">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="9OT-u7-t14" id="RnP-Tf-CwE"/>
+                            <outlet property="delegate" destination="9OT-u7-t14" id="HXO-fs-oP4"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gW-1b-Kfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="-1078"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="TW7-2y-0J8">

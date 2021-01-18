@@ -11,8 +11,9 @@ import Vision;
 class ImagePickerPhotoPreviewController: PhotoPreviewView {
 
     @IBOutlet weak var pointer: UIImageView!
-    @IBOutlet weak var privewLabel: UILabel!
-    
+    @IBOutlet weak var colorPreviewLabel: UILabel!
+    @IBOutlet weak var hexLabel: UILabel!
+    @IBOutlet weak var seperatorLabel: UILabel!
     var pointerHorizantalConstranit: NSLayoutConstraint?
     var pointerVerticalConstranit: NSLayoutConstraint?
     var pointerNewTopConstranit: NSLayoutConstraint?
@@ -21,9 +22,13 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
     override func viewDidLoad() {
         super.viewDidLoad();
         setUpPointer(pointer);
-        privewLabel.isHidden = true;
+        colorPreviewLabel.isHidden = true;
+        hexLabel.isHidden = true
+        seperatorLabel.isHidden = true
         
         pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
+        hexLabel.isAccessibilityElement = false
+        seperatorLabel.isAccessibilityElement = false
     }
     
     override func setupPointerConstraints(_ pointer: UIImageView) {
@@ -66,8 +71,16 @@ class ImagePickerPhotoPreviewController: PhotoPreviewView {
         // call super.updateLabel() to run super implementation
         super.updateLabel()
         
-        self.privewLabel.text = localizedLabelText
-        self.privewLabel.isHidden = false
+        self.colorPreviewLabel.text = localizedLabelText
+        self.colorPreviewLabel.isHidden = false
+        
+        self.hexLabel.text = "\(paletteHexStringCode)"
+        self.hexLabel.isHidden =  false
+        
+        self.seperatorLabel.isHidden = false
+        
+        self.colorPreviewLabel.text = localizedLabelText
+        self.colorPreviewLabel.isHidden = false
     }
     
     //MARK:- Helper(s)

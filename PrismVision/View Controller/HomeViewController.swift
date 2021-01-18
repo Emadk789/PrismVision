@@ -13,7 +13,7 @@ import CoreML;
 class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var colorPreviewLabel: UILabel!
     @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var flashButton: UIButton!
     
@@ -26,7 +26,6 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBOutlet weak var forTestingStack: UIStackView!
     @IBOutlet weak var cameraUIimage: UIImageView!
     @IBOutlet weak var hexLabel: UILabel!
-//    @IBOutlet weak var stackViewLabels: UIStackView!
     @IBOutlet weak var seperatorLabel: UILabel!
     
     var session: AVCaptureSession?;
@@ -59,7 +58,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setupCameraView();
         setupZPositions();
         
-        label.isHidden = true;
+        colorPreviewLabel.isHidden = true;
         hexLabel.isHidden = true
         seperatorLabel.isHidden = true
         setUpPointer(pointer);
@@ -68,6 +67,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         colorPrivewImageView.layer.cornerRadius = colorPrivewImageView.frame.size.width/2
         
+        let vc = TutorialViewController()
+        show(vc, sender: self)
+//        present(vc, animated: true, completion: nil)
         
 
 
@@ -75,7 +77,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     private func setupZPositions() {
         cameraButton.layer.zPosition = 1;
         pointer.layer.zPosition = 1;
-        label.layer.zPosition = 1;
+        colorPreviewLabel.layer.zPosition = 1;
         flashButton.layer.zPosition = 1;
         albumButton.layer.zPosition = 1;
         settingsButton.layer.zPosition = 1;
@@ -95,6 +97,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
         
         hexLabel.isAccessibilityElement = false
+        seperatorLabel.isAccessibilityElement = false
         
     }
 
@@ -184,8 +187,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
 //        vc.image = testImage2
 
         
-        self.label.text = localizedLabelText
-        self.label.isHidden = false
+        self.colorPreviewLabel.text = localizedLabelText
+        self.colorPreviewLabel.isHidden = false
         
         self.hexLabel.text = "\(paletteHexStringCode)"
         self.hexLabel.isHidden =  false
