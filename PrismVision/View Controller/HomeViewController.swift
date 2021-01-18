@@ -25,6 +25,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     @IBOutlet weak var forTesting: UILabel!
     @IBOutlet weak var forTestingStack: UIStackView!
     @IBOutlet weak var cameraUIimage: UIImageView!
+    @IBOutlet weak var hexLabel: UILabel!
+//    @IBOutlet weak var stackViewLabels: UIStackView!
+    @IBOutlet weak var seperatorLabel: UILabel!
     
     var session: AVCaptureSession?;
     var input: AVCaptureDeviceInput?;
@@ -57,11 +60,15 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         setupZPositions();
         
         label.isHidden = true;
+        hexLabel.isHidden = true
+        seperatorLabel.isHidden = true
         setUpPointer(pointer);
         
         setAccessibillityLabels();
         
         colorPrivewImageView.layer.cornerRadius = colorPrivewImageView.frame.size.width/2
+        
+        
 
 
     }
@@ -76,6 +83,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         forTestingActualColor.layer.zPosition = 1
         forTestingStack.layer.zPosition = 1
+        seperatorLabel.layer.zPosition = 1
+        hexLabel.layer.zPosition = 1
     }
     private func setAccessibillityLabels() {
         cameraButton.accessibilityLabel = NSLocalizedString("Camera", comment: "The camera Button");
@@ -84,6 +93,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         albumButton.accessibilityLabel = NSLocalizedString("Album", comment: "The Album Button");
         settingsButton.accessibilityLabel = NSLocalizedString("Settings", comment: "The Settings Button");
         pointer.accessibilityLabel = NSLocalizedString("Pointer", comment: "The Pointer Image");
+        
+        hexLabel.isAccessibilityElement = false
         
     }
 
@@ -113,7 +124,7 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
     }
     @IBAction func albumButtonClicked(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true else { return }
-        
+        pickerView.allowsEditing = true
         present(pickerView, animated: true, completion: nil);
         
     }
@@ -176,6 +187,11 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         self.label.text = localizedLabelText
         self.label.isHidden = false
         
+        self.hexLabel.text = "\(paletteHexStringCode)"
+        self.hexLabel.isHidden =  false
+        
+        self.seperatorLabel.isHidden = false
+        
         colorPrivewImageView.backgroundColor = closestPaletteColorHTMLCode
         forTesting.isHidden = false
         forTestingActualColor.isHidden = false
@@ -186,7 +202,8 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil);
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
+//        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
 
         vc.image = image;

@@ -64,10 +64,10 @@ class HomeAndImagePickerSuperViewController: UIViewController {
     }
     // This function is overriden in the subclasses
     func updateLabel() {
-        let formatString = NSLocalizedString("Color: %@", comment: "Classification Lable");
+        let formatString = NSLocalizedString("%@", comment: "Classification Lable");
         let localizedColorName = NSLocalizedString(self.imaggaParentColor2, comment: "")
         print("localizedColorName", localizedColorName)
-        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized + "  |  \(paletteHexStringCode)";
+        localizedLabelText =  String.localizedStringWithFormat(formatString, localizedColorName).capitalized //+ "  |  ";
         
 //        let vc = storyboard?.instantiateViewController(identifier: "Preview") as! PhotoPreviewView
 //        

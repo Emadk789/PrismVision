@@ -7,7 +7,7 @@
 */
 
 //
-"Color: %@" = "Color: %@";
+"%@" = "%@";
 
 //UI Objects' names
 "Camera" = "Camera";
