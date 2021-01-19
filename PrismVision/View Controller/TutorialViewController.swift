@@ -26,43 +26,8 @@ class TutorialViewController: UIViewController {
         return collectionView
     }()
     
-    private let nextButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Next", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.tintColor = .black
-        button.contentEdgeInsets.left = 8
-        button.contentEdgeInsets.right = 8
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 8
-        
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.systemGray2.cgColor
-        
-        button.backgroundColor = .secondaryLabel
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    private let previousButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Previous", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.tintColor = .black
-        
-        button.contentEdgeInsets.left = 8
-        button.contentEdgeInsets.right = 8
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 8
-        
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.systemGray2.cgColor
-        
-        button.backgroundColor = .secondaryLabel
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    private let nextButton = UIButton(title: "Next")
+    private let previousButton = UIButton(title: "Previous")
     
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -125,6 +90,7 @@ class TutorialViewController: UIViewController {
 class TutorialCollectionViewCell: UICollectionViewCell {
 }
 
+//MARK:- UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension TutorialViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,9 +112,6 @@ extension TutorialViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        
-    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size: CGSize
         let screenWidth = collectionView.frame.width
