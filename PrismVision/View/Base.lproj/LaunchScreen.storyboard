@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,18 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_Prism Vision -02 2" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-ak-UWx">
-                                <rect key="frame" x="0.0" y="198" width="414" height="500"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_Prism Vision -4" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-ak-UWx">
+                                <rect key="frame" x="0.0" y="248" width="414" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="RUh-EJ-qJ1"/>
+                                    <constraint firstAttribute="height" constant="400" id="ZGE-vP-SKE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="From Prism Vision-3" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-97-tuh">
+                                <rect key="frame" x="87" y="748" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Rsu-UC-M7f"/>
+                                    <constraint firstAttribute="height" constant="128" id="pgm-8r-BLu"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nbm-97-tuh" secondAttribute="bottom" constant="20" id="3jE-ig-jpC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3zv-ak-UWx" secondAttribute="trailing" id="GFA-fG-HBg"/>
                             <constraint firstItem="3zv-ak-UWx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HyH-QI-h52"/>
+                            <constraint firstItem="nbm-97-tuh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hAR-3W-ny7"/>
                             <constraint firstItem="3zv-ak-UWx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tC6-8j-luS"/>
                             <constraint firstItem="3zv-ak-UWx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zJV-kN-Vh1"/>
                         </constraints>
@@ -39,7 +49,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="_Prism Vision -02 2" width="1024" height="799"/>
+        <image name="From Prism Vision-3" width="660" height="138"/>
+        <image name="_Prism Vision -4" width="500" height="645"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
