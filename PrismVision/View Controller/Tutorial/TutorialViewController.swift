@@ -35,23 +35,10 @@ class TutorialViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = .black
         pageControl.numberOfPages = 7
         pageControl.tintColor = .systemRed
+        pageControl.isEnabled = false
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "house")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Test Label"
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,15 +54,19 @@ class TutorialViewController: UIViewController {
         view.addSubview(pageControl)
         view.addSubview(nextButton)
         view.addSubview(previousButton)
-        view.addSubview(imageView)
-        view.addSubview(descriptionLabel)
     }
     private func addActions() {
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
         previousButton.addTarget(self, action: #selector(previousButtonClicked), for: .touchUpInside)
     }
     @objc private func nextButtonClicked() {
-        manageContols(.next)
+        if nextButton.currentTitle != "Next" {
+            dismiss(animated: true, completion: nil)
+        }
+        else {
+            manageContols(.next)
+        }
+        
     }
     @objc private func previousButtonClicked() {
         manageContols(.previous)
@@ -85,15 +76,13 @@ class TutorialViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemGray
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(TutorialCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     private func configurViewsAnchors() {
         configurCollectionViewAnchors()
         configurNextButtonAnchors()
         configurPreviousButtonAnchors()
         configurPageControlAnchors()
-        configurImageViewAnchors()
-        configurDescriptionLabelAnchors()
     }
     private func configurCollectionViewAnchors() {
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -113,17 +102,6 @@ class TutorialViewController: UIViewController {
         pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8).isActive = true
-    }
-    private func configurImageViewAnchors() {
-        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
-        imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true
-    }
-    private func configurDescriptionLabelAnchors() {
-        descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
     }
     // MARK:- Helper(s)
 
@@ -152,39 +130,99 @@ class TutorialViewController: UIViewController {
         if indexPath.item != 0 {
             previousButton.isHidden = false
             nextButton.isHidden = false
+            nextButton.setTitle("Next", for: .normal)
         }
         if indexPath.item == collectionView.numberOfItems(inSection: 0) - 1 {
-            nextButton.isHidden = true
-            //TODO: Show Done Button! or Change the title of the next button
+            nextButton.setTitle("Done", for: .normal)
         }
     }
 }
 
-class TutorialCollectionViewCell: UICollectionViewCell {
-}
 
 //MARK:- UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension TutorialViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.numberOfPages = 3
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .systemGray3
-        if indexPath.item == 0 {
-            cell.backgroundColor = .systemBlue
-        }
-        if indexPath.item == 1 {
-            cell.backgroundColor = .systemPurple
-        }
-        if indexPath.item == 2 {
-            cell.backgroundColor = .systemPink
-        }
+        let numberOfItemsInSection = 8
         
+        pageControl.numberOfPages = numberOfItemsInSection
+        return numberOfItemsInSection
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TutorialCollectionViewCell
+        cell.backgroundColor = .systemGray
+        var titleString: String
+        var bodyString: String
+        switch indexPath.item {
+        case 0:
+            // Flash Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Flash")
+            titleString = NSLocalizedString(TutorialStrings.Flash.title.stringValue, comment: TutorialStrings.Flash.title.stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.Flash.body.stringValue, comment: TutorialStrings.Flash.body.stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 1:
+            // Camera Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Camera")
+            titleString = NSLocalizedString(TutorialStrings.Camera.title.stringValue, comment: TutorialStrings.Camera.title.stringValue)
+            bodyString = "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color"
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 2:
+            // Color Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Color")
+            titleString = "Color Label"
+            bodyString = "Shows the detected color"
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 3:
+            // Hex Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Hex")
+            titleString = "Hex Label"
+            bodyString = "Shows the Hex value of the detected color"
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 4:
+            // Album Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Album")
+            titleString = "Album Button"
+            bodyString = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images."
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 5:
+            // Pointer Cell
+            cell.imageView.loadGif(name: "Pointer Movement")
+            titleString = "The Pointer"
+            bodyString = "Drag it around the screen to detect the colors of different points on the screen"
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 6:
+            // Settings Cell
+            cell.imageView.image = #imageLiteral(resourceName: "Settings t")
+            titleString = "Settings Button"
+            bodyString = "1. Change the language of the app \n2. Revisit this tutorial"
+            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+        case 7:
+            // Enjoy Cell
+            cell.imageView.image = nil
+            cell.descriptionLabel.textAlignment = .center
+            titleString = "Enjoy! ✨"
+            cell.descriptionLabel.text = titleString
+            cell.descriptionLabel.font = UIFont.boldSystemFont(ofSize: 23)
+        
+        default:
+            break
+        }
+    
         return cell
+    }
+    func setCellsTextView(title: String, body: String) -> NSMutableAttributedString{
+        let titleString = NSAttributedString(string: title,
+                                             attributes: [
+                                                .font: UIFont.boldSystemFont(ofSize: 18),
+                                                .foregroundColor : UIColor.black])
+        let bodyString = NSAttributedString(string: "\n\n\(body)",
+                                            attributes: [
+                                                .font: UIFont.systemFont(ofSize: 18),
+                                                .foregroundColor : UIColor.black])
+        let description = NSMutableAttributedString(string: "")
+        description.append(titleString)
+        description.append(bodyString)
+        return description
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

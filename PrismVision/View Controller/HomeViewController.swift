@@ -67,12 +67,31 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         
         colorPrivewImageView.layer.cornerRadius = colorPrivewImageView.frame.size.width/2
         
-        let vc = TutorialViewController()
-        show(vc, sender: self)
-//        present(vc, animated: true, completion: nil)
+        
         
 
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !isLaunchBefore() {
+            let vc = TutorialViewController()
+            present(vc, animated: true, completion: nil)
+        }
+        let vc = TutorialViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    private func isLaunchBefore() -> Bool {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore {
+            print("Not first launch.")
+            return true
+        }
+        else {
+            print("First launch")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            return false
+        }
     }
     private func setupZPositions() {
         cameraButton.layer.zPosition = 1;

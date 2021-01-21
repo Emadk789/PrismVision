@@ -19,47 +19,51 @@
 // Settings
 "Language" = "Language";
 
+//TutorialVC cells
 
-//List down the colors' names we have!
-//"Black"         = "Black";
-//"White"         = "White";
-//"Yellow"        = "Yellow";
-//"Beige"         = "Beige";
-//"Hot Pink"      = "Bright Pink"; //
-//"Magenta"       = "Magenta";
-//"Red"           = "Red";
-//"Teal"          = "Turquoise"; //
-//"Maroon"        = "Maroon";
-//"Lavender"      = "Lavender";
-//"Blue"          = "Blue";
-//"Light Blue"    = "Light Blue";
-//"Mauve"         = "Crimson"; //
-//"Turquoise"     = "Turquoise";
-//"Brown"         = "Brown";
-//"Navy Blue"     = "Navy Blue";
-//"Purple"        = "Purple";
-//"Grey"          = "Grey";
-//"Skin"          = "Skin";
-//"Orange"        = "Orange";
-//"Light Brown"   = "Light Brown";
-//"Olive Green"   = "Olive Green";
-//"Green"         = "Green";
-//"Dark Green"    = "Dark Green";
-//"Light Green"   = "Light Green";
-//"Gold"          = "Gold";
-//"Pink"          = "Pink";
-//"Violet"        = "Violet";
-//"Plum"          = "Plum";
-//"Light Grey"    = "Light Grey";
-//"Greige"        = "Grey Green"; //
-//"Light Pink"    = "Light Pink";
-
-
-
-
-
-
-
+    //Flash
+        //Title
+        "Flash Button" = "Flash Button";
+        //Body
+        "Allows you to toggle the flash on your phone" = "Allows you to toggle the flash on your phone.";
+    //Camera
+        //Title
+        "Flash Button" = "Flash Button";
+        //Body
+        "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color" = "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color";
+    //Color
+        //Title
+        "Color Label" = "Color Label";
+        //Body
+        "Shows the detected color" = "Shows the detected color";
+    //Hex
+        //Title
+        "Hex Label" = "Hex Label";
+        //Body Album Button
+        "Shows the Hex value of the detected color" = "Shows the Hex value of the detected color";
+    //Album
+        //Title
+        "Album Button" = "Album Button";
+        //Body
+        "1. Access the photos' album on your phone \n2. Detect colors on the chosen images" = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images";
+    //Pointer
+        //Title
+        "The Pointer" = "The Pointer";
+        //Body Album Button
+        "Drag it around the screen to detect the colors of different points on the screen" = "Drag it around the screen to detect the colors of different points on the screen";
+    //Settings
+        //Title
+        "Settings Button" = "Settings Button";
+        //Body
+        "1. Change the language of the app \n2. Revisit this tutorial" = "1. Change the language of the app \n2. Revisit this tutorial";
+    //Recommendations
+        //Title
+        "Recommendations" = "Recommendations";
+        //Body
+        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app" = "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app";
+    //Enjoy
+        //Title
+        "Enjoy! ✨" = "Enjoy! ✨";
 
 
 //List down the colors' names we have!

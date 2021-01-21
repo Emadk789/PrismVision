@@ -405,10 +405,10 @@
             </objects>
             <point key="canvasLocation" x="1556" y="-571.66416791604206"/>
         </scene>
-        <!--View Controller-->
+        <!--Temp View Controller-->
         <scene sceneID="Ib1-uE-y8C">
             <objects>
-                <viewController id="deJ-sD-ucv" sceneMemberID="viewController">
+                <viewController id="deJ-sD-ucv" customClass="TempViewController" customModule="PrismVision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t99-ec-rGA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,6 +416,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a0Q-XR-lT3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zgy-z9-Ur2">
                                 <rect key="frame" x="152.5" y="567" width="70" height="70"/>
@@ -434,17 +435,6 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="flash"/>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraButton" translatesAutoresizingMaskIntoConstraints="NO" id="h7h-il-wEm">
-                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Lw9-8A-E8u"/>
-                                    <constraint firstAttribute="height" constant="30" id="b2o-OU-kba"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-kM-qlb">
                                 <rect key="frame" x="8" y="16" width="40" height="40"/>
                                 <constraints>
@@ -488,6 +478,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CameraButton" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-Dd-RVJ">
+                                <rect key="frame" x="172" y="318" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sn8-O8-Lw2"/>
+                                    <constraint firstAttribute="width" constant="30" id="Usd-0a-6ew"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="#808080" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ur-2C-alZ">
                                 <rect key="frame" x="197.5" y="642.5" width="72.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -511,7 +512,6 @@
                             <constraint firstItem="aoj-Wu-aFD" firstAttribute="leading" secondItem="Yo4-xJ-oQk" secondAttribute="leading" constant="8" id="GcR-GW-a3v"/>
                             <constraint firstItem="Yo4-xJ-oQk" firstAttribute="trailing" secondItem="aoj-Wu-aFD" secondAttribute="trailing" constant="9" id="Lqa-Hq-kMN"/>
                             <constraint firstItem="Yo4-xJ-oQk" firstAttribute="bottom" secondItem="4B2-OV-Zry" secondAttribute="bottom" constant="45" id="N84-OS-OjA"/>
-                            <constraint firstItem="h7h-il-wEm" firstAttribute="centerY" secondItem="t99-ec-rGA" secondAttribute="centerY" id="OhV-T8-rg6"/>
                             <constraint firstItem="Yo4-xJ-oQk" firstAttribute="bottom" secondItem="8ur-2C-alZ" secondAttribute="bottom" constant="4" id="PM0-bt-lpT"/>
                             <constraint firstItem="ncS-K9-KQw" firstAttribute="leading" secondItem="fgH-ll-BBo" secondAttribute="trailing" constant="8" id="R9B-NK-JpD"/>
                             <constraint firstItem="zgy-z9-Ur2" firstAttribute="centerX" secondItem="t99-ec-rGA" secondAttribute="centerX" id="Rdc-Q6-FG9"/>
@@ -522,20 +522,22 @@
                             <constraint firstItem="7sG-ai-5hi" firstAttribute="centerX" secondItem="t99-ec-rGA" secondAttribute="centerX" id="iOm-m1-2Ks"/>
                             <constraint firstItem="ncS-K9-KQw" firstAttribute="centerX" secondItem="t99-ec-rGA" secondAttribute="centerX" id="j7m-RR-OO8"/>
                             <constraint firstItem="Yo4-xJ-oQk" firstAttribute="bottom" secondItem="7sG-ai-5hi" secondAttribute="bottom" constant="30" id="nKR-2H-Bfg"/>
-                            <constraint firstItem="h7h-il-wEm" firstAttribute="centerX" secondItem="t99-ec-rGA" secondAttribute="centerX" id="qZK-L0-S3j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zgL-e6-Y0c"/>
+                    <connections>
+                        <outlet property="pointer" destination="P0w-Dd-RVJ" id="dE4-E2-Glo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qh-SR-v96" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="888"/>
+            <point key="canvasLocation" x="1556" y="887.40629685157433"/>
         </scene>
     </scenes>
     <resources>
         <image name="CameraButton" width="36" height="36"/>
         <image name="CameraButton2" width="70" height="70"/>
-        <image name="Settings" width="36" height="36"/>
+        <image name="Settings" width="72" height="72"/>
         <image name="album" width="50" height="50"/>
         <image name="flash" width="50" height="50"/>
         <image name="icons8-third-eye-symbol-50 1" width="25" height="25"/>
