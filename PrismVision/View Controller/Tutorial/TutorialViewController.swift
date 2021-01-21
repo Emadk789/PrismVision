@@ -76,7 +76,8 @@ class TutorialViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemGray
-        collectionView.register(TutorialCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(TutorialCollectionViewCell.self, forCellWithReuseIdentifier: "Cell1")
+        collectionView.register(TutorialCollectionViewRecommendationCell.self , forCellWithReuseIdentifier: "Cell2")
     }
     private func configurViewsAnchors() {
         configurCollectionViewAnchors()
@@ -143,13 +144,13 @@ class TutorialViewController: UIViewController {
 extension TutorialViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfItemsInSection = 8
+        let numberOfItemsInSection = 9
         
         pageControl.numberOfPages = numberOfItemsInSection
         return numberOfItemsInSection
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TutorialCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell1", for: indexPath) as! TutorialCollectionViewCell
         cell.backgroundColor = .systemGray
         var titleString: String
         var bodyString: String
@@ -157,60 +158,67 @@ extension TutorialViewController: UICollectionViewDelegate, UICollectionViewData
         case 0:
             // Flash Cell
             cell.imageView.image = #imageLiteral(resourceName: "Flash")
-            titleString = NSLocalizedString(TutorialStrings.Flash.title.stringValue, comment: TutorialStrings.Flash.title.stringValue)
-            bodyString = NSLocalizedString(TutorialStrings.Flash.body.stringValue, comment: TutorialStrings.Flash.body.stringValue)
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.flash(for: .title).stringValue, comment: TutorialStrings.flash(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.flash(for: .body).stringValue, comment: TutorialStrings.flash(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 1:
             // Camera Cell
             cell.imageView.image = #imageLiteral(resourceName: "Camera")
-            titleString = NSLocalizedString(TutorialStrings.Camera.title.stringValue, comment: TutorialStrings.Camera.title.stringValue)
-            bodyString = "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color"
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.camera(for: .title).stringValue, comment: TutorialStrings.camera(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.camera(for: .body).stringValue, comment: TutorialStrings.camera(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 2:
             // Color Cell
             cell.imageView.image = #imageLiteral(resourceName: "Color")
-            titleString = "Color Label"
-            bodyString = "Shows the detected color"
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.color(for: .title).stringValue, comment: TutorialStrings.color(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.color(for: .body).stringValue, comment: TutorialStrings.color(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 3:
             // Hex Cell
             cell.imageView.image = #imageLiteral(resourceName: "Hex")
-            titleString = "Hex Label"
-            bodyString = "Shows the Hex value of the detected color"
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.hex(for: .title).stringValue, comment: TutorialStrings.hex(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.hex(for: .body).stringValue, comment: TutorialStrings.hex(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 4:
             // Album Cell
             cell.imageView.image = #imageLiteral(resourceName: "Album")
-            titleString = "Album Button"
-            bodyString = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images."
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.album(for: .title).stringValue, comment: TutorialStrings.album(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.album(for: .body).stringValue, comment: TutorialStrings.album(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 5:
             // Pointer Cell
             cell.imageView.loadGif(name: "Pointer Movement")
-            titleString = "The Pointer"
-            bodyString = "Drag it around the screen to detect the colors of different points on the screen"
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.pointer(for: .title).stringValue, comment: TutorialStrings.pointer(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.pointer(for: .body).stringValue, comment: TutorialStrings.pointer(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 6:
             // Settings Cell
             cell.imageView.image = #imageLiteral(resourceName: "Settings t")
-            titleString = "Settings Button"
-            bodyString = "1. Change the language of the app \n2. Revisit this tutorial"
-            cell.descriptionLabel.attributedText = setCellsTextView(title: titleString, body: bodyString)
+            titleString = NSLocalizedString(TutorialStrings.settings(for: .title).stringValue, comment: TutorialStrings.settings(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.settings(for: .body).stringValue, comment: TutorialStrings.settings(for: .body).stringValue)
+            cell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
         case 7:
+            // Recommendations Cell
+            let rCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! TutorialCollectionViewRecommendationCell
+            cell.backgroundColor = .systemGray
+            titleString = NSLocalizedString(TutorialStrings.recommendations(for: .title).stringValue, comment: TutorialStrings.recommendations(for: .title).stringValue)
+            bodyString = NSLocalizedString(TutorialStrings.recommendations(for: .body).stringValue, comment: TutorialStrings.recommendations(for: .body).stringValue)
+            rCell.descriptionLabel.attributedText = setCellsTextViewAttributedString(title: titleString, body: bodyString)
+            return rCell
+        case 8:
             // Enjoy Cell
             cell.imageView.image = nil
             cell.descriptionLabel.textAlignment = .center
-            titleString = "Enjoy! ✨"
+            titleString = NSLocalizedString(TutorialStrings.enjoy(for: .title).stringValue, comment: TutorialStrings.enjoy(for: .title).stringValue)
             cell.descriptionLabel.text = titleString
-            cell.descriptionLabel.font = UIFont.boldSystemFont(ofSize: 23)
+            cell.descriptionLabel.font = UIFont.boldSystemFont(ofSize: 30)
         
         default:
             break
         }
-    
         return cell
     }
-    func setCellsTextView(title: String, body: String) -> NSMutableAttributedString{
+    private func setCellsTextViewAttributedString(title: String, body: String) -> NSMutableAttributedString{
         let titleString = NSAttributedString(string: title,
                                              attributes: [
                                                 .font: UIFont.boldSystemFont(ofSize: 18),

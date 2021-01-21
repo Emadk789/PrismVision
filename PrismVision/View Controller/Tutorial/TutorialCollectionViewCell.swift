@@ -56,3 +56,38 @@ class TutorialCollectionViewCell: UICollectionViewCell {
         descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
+
+class TutorialCollectionViewRecommendationCell: UICollectionViewCell {
+    var descriptionLabel: UITextView = {
+        let textView = UITextView()
+        
+        textView.text = "Test Label"
+        textView.textColor = .black
+        textView.backgroundColor = .systemGray
+        textView.allowsEditingTextAttributes = false
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addSubViews()
+        configurAnchors()
+    }
+    private func addSubViews() {
+        addSubview(descriptionLabel)
+        
+    }
+    private func configurAnchors() {
+        configurDescriptionLabelAnchors()
+    }
+
+    private func configurDescriptionLabelAnchors() {
+        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+}
