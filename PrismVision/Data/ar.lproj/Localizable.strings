@@ -21,6 +21,8 @@
 // Settings
 "Language" = "اللغة";
 
+"English" = "العربية";
+"Tutorial" = "الارشادات";
 
 //TutorialVC cells
     "Next" = "التالي";

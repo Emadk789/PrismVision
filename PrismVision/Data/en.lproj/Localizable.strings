@@ -19,6 +19,10 @@
 // Settings
 "Language" = "Language";
 
+"English" = "Engilsh";
+"Tutorial" = "Tutorial";
+
+
 //TutorialVC cells
     "Next" = "Next";
     "Previous" = "Previous";
