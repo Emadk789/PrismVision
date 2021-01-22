@@ -79,7 +79,7 @@ enum TutorialStrings {
             case .title:
                 return "Recommendations"
             case .body:
-                return "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n\n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app"
+                return "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment"
             }
         case let .enjoy(type):
             switch type {

@@ -26,8 +26,8 @@ class TutorialViewController: UIViewController {
         return collectionView
     }()
     
-    private let nextButton = UIButton(title: "Next")
-    private let previousButton = UIButton(title: "Previous")
+    private let nextButton = UIButton(title: NSLocalizedString("Next", comment: "Next"))
+    private let previousButton = UIButton(title: NSLocalizedString("Previous", comment: "Previous"))
     
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -60,7 +60,7 @@ class TutorialViewController: UIViewController {
         previousButton.addTarget(self, action: #selector(previousButtonClicked), for: .touchUpInside)
     }
     @objc private func nextButtonClicked() {
-        if nextButton.currentTitle != "Next" {
+        if nextButton.currentTitle != NSLocalizedString("Next", comment: "Next") {
             dismiss(animated: true, completion: nil)
         }
         else {
@@ -131,10 +131,10 @@ class TutorialViewController: UIViewController {
         if indexPath.item != 0 {
             previousButton.isHidden = false
             nextButton.isHidden = false
-            nextButton.setTitle("Next", for: .normal)
+            nextButton.setTitle(NSLocalizedString("Next", comment: "Next"), for: .normal)
         }
         if indexPath.item == collectionView.numberOfItems(inSection: 0) - 1 {
-            nextButton.setTitle("Done", for: .normal)
+            nextButton.setTitle(NSLocalizedString("Done", comment: "Done"), for: .normal)
         }
     }
 }

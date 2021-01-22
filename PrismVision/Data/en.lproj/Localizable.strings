@@ -20,7 +20,9 @@
 "Language" = "Language";
 
 //TutorialVC cells
-
+    "Next" = "Next";
+    "Previous" = "Previous";
+    "Done" = "Done";
     //Flash
         //Title
         "Flash Button" = "Flash Button";
@@ -28,9 +30,9 @@
         "Allows you to toggle the flash on your phone" = "Allows you to toggle the flash on your phone.";
     //Camera
         //Title
-        "Flash Button" = "Flash Button";
+        "Camera Button" = "Camera Button";
         //Body
-        "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color" = "1. Allows you to detect colors \n2. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color";
+        "Allows you to detect colors" = "Allows you to detect colors";
     //Color
         //Title
         "Color Label" = "Color Label";
@@ -45,7 +47,7 @@
         //Title
         "Album Button" = "Album Button";
         //Body
-        "1. Access the photos' album on your phone \n2. Detect colors on the chosen images" = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images";
+        "1. Access the photos' album on your phone \n\n2. Detect colors on the chosen images" = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images";
     //Pointer
         //Title
         "The Pointer" = "The Pointer";
@@ -55,12 +57,12 @@
         //Title
         "Settings Button" = "Settings Button";
         //Body
-        "1. Change the language of the app \n2. Revisit this tutorial" = "1. Change the language of the app \n2. Revisit this tutorial";
+        "1. Change the language of the app \n\n2. Revisit this tutorial" = "1. Change the language of the app \n2. Revisit this tutorial";
     //Recommendations
         //Title
         "Recommendations" = "Recommendations";
         //Body
-        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app" = "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app";
+        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment" = "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment";
     //Enjoy
         //Title
         "Enjoy! ✨" = "Enjoy! ✨";

@@ -22,40 +22,57 @@
 "Language" = "اللغة";
 
 
-//List down the colors' names we have!
-//"Black"         = "اسود";
-//"White"         = "أبيض";
-//"Yellow"        = "أصفر";
-//"Beige"         = "بيج";
-//"Hot Pink"      = "فوشي";
-//"Magenta"       = "أرجواني";
-//"Red"           = "أحمر";
-//"Teal"          = "تركوازي";
-//"Maroon"        = "عودي";
-//"Lavender"      = "ليلكي";
-//"Blue"          = "أزرق";
-//"Light Blue"    = "سماوي";
-//"Mauve"         = "وردي غامق";
-//"Turquoise"     = "تركوازي";
-//"Brown"         = "بني";
-//"Navy Blue"     = "كحلي";
-//"Purple"        = "بنفسجي";
-//"Grey"          = "رمادي";
-//"Skin"          = "لحمي";
-//"Orange"        = "برتقالي";
-//"Light Brown"   = "بني فاتح";
-//"Olive Green"   = "أخضر زيتوني";
-//"Green"         = "أخضر";
-//"Dark Green"    = "أخضر غامق";
-//"Light Green"   = "فستقي";
-//"Gold"          = "ذهبي";
-//"Pink"          = "وردي";
-//"Violet"        = "بنفسجي";
-//"Plum"          = "باذنجاني";
-//"Light Grey"    = "رمادي فاتح";
-//"Greige"        = "أخضر زيتوني";
-//"Light Pink"    = "وردي فاتح";
-
+//TutorialVC cells
+    "Next" = "التالي";
+    "Previous" = "السابق";
+    "Done" = "تم";
+    //Flash
+        //Title
+        "Flash Button" = "الضوء الخلفي";
+        //Body
+        "Allows you to toggle the flash on your phone" = "يمكنك تشغيل وايقاف الضوء الخلفي";
+    //Camera
+        //Title
+        "Camera Button" = "الكاميرا";
+        //Body
+        "Allows you to detect colors" = "يمكنك من التعرف على اللون";
+    //Color
+        //Title
+        "Color Label" = "اللون";
+        //Body
+        "Shows the detected color" = "يعرض اسم اللون";
+    //Hex
+        //Title
+        "Hex Label" = "الرمز";
+        //Body Album Button
+        "Shows the Hex value of the detected color" = "يعرض رمز اللون";
+    //Album
+        //Title
+        "Album Button" = "الالبوم";
+        //Body
+        "1. Access the photos' album on your phone \n\n2. Detect colors on the chosen images" = "
+١. يساعدك في الوصول الى البوم الصور الخاصة بك\n\n ٢. يمكنك تحديد التعرف على الالون في الصور المختارة";
+    //Pointer
+        //Title
+        "The Pointer" = "المؤشر";
+        //Body Album Button
+        "Drag it around the screen to detect the colors of different points on the screen" = "يمكنك تحريك المؤشر في الشاشة للتعرف على الالوان في نقاط مختلفة في الشاشة";
+    //Settings
+        //Title
+        "Settings Button" = "الاعدادات";
+        //Body
+        "1. Change the language of the app \n\n2. Revisit this tutorial" = "
+١. يمكنك تغير لغة التطبيق\n\n ٢. يمكنك مراجعة هذه الارشادات";
+    //Recommendations
+        //Title
+        "Recommendations" = "الاقتراحات";
+        //Body
+        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment" = "
+١.  تاكد ان الجوال ليس على الصامت لسماع الصوت عندما يحدد التطبيق اللون\n\n ٢.  يمكنك استخدام ميزة 'وحدة التحكم بالنطق' او 'Voice Over' للتحكم بالتطبيق\n\n ٣. للحصول على نتائج افضل، تاكد ان الاضاءة ممتازة عند استخدام التطبيق"
+;
+    //Enjoy
+        //Title
+        "Enjoy! ✨" = "استمتع! ✨";
 
 
 
