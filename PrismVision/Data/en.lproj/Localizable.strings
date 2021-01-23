@@ -51,7 +51,7 @@
         //Title
         "Album Button" = "Album Button";
         //Body
-        "1. Access the photos' album on your phone \n\n2. Detect colors on the chosen images" = "1. Access the photos' album on your phone \n2. Detect colors on the chosen images";
+        "1. Access the photos' album on your phone \n\n2. Detect colors on the chosen images" = "1. Access the photos' album on your phone \n\n2. Detect colors on the chosen images";
     //Pointer
         //Title
         "The Pointer" = "The Pointer";
@@ -61,12 +61,12 @@
         //Title
         "Settings Button" = "Settings Button";
         //Body
-        "1. Change the language of the app \n\n2. Revisit this tutorial" = "1. Change the language of the app \n2. Revisit this tutorial";
+        "1. Change the language of the app \n\n2. Revisit this tutorial" = "1. Change the language of the app \n\n2. Revisit this tutorial";
     //Recommendations
         //Title
         "Recommendations" = "Recommendations";
         //Body
-        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment" = "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment";
+        "1. Make sure to have the \"Silent Mode\" turned off if you want to listen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment \n4. Make sure to have the object to be detected at a reasonable distance from the phone" = "1. Make sure to have the \"Silent Mode\" turned off if you want to listen to when the app has captured the color \n\n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n\n3. To have better results, make sure that you use the app in a very well lit environment \n\n4. Make sure to have the object to be detected at a reasonable distance from the phone";
     //Enjoy
         //Title
         "Enjoy! ✨" = "Enjoy! ✨";
@@ -94,7 +94,7 @@
 "meadow"                  = "turquoise";
 "pantone turquoise"       = "turquoise";
 "capri"                   = "turquoise";
-"aquamarine"             = "turquoise";
+"aquamarine"             = "light blue";
 "spa"                     = "turquoise";
 "oasis"                   = "steel blue";
 "niagara"                 = "steel blue";
@@ -214,7 +214,7 @@
 "carnation"               = "nude pink";
 "rosebud"                 = "lavender";
 "hot pink"                = "pink";
-"pantone honeysuckle"     = "pink";
+"pantone honeysuckle"     = "magenta";
 "pretty in pink"          = "nude pink";
 "fuchsia"                 = "pink";
 "american beauty"         = "magenta";
@@ -278,7 +278,7 @@
 "dark beige"              = "brown";
 "medium rose-beige"       = "pink-beige";
 "medium brown"            = "brown";
-"medium beige"            = "beige";
+"medium beige"            = "yellow";
 
 "dark grey"               = "dark grey";
 "mocha"                   = "dark grey";

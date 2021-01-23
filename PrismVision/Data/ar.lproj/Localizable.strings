@@ -69,8 +69,9 @@
         //Title
         "Recommendations" = "الاقتراحات";
         //Body
-        "1. Make sure to have the \"Silent Mode\" turned off if you want to lessen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment" = "
-١.  تاكد ان الجوال ليس على الصامت لسماع الصوت عندما يحدد التطبيق اللون\n\n ٢.  يمكنك استخدام ميزة 'وحدة التحكم بالنطق' او 'Voice Over' للتحكم بالتطبيق\n\n ٣. للحصول على نتائج افضل، تاكد ان الاضاءة ممتازة عند استخدام التطبيق"
+        "1. Make sure to have the \"Silent Mode\" turned off if you want to listen to when the app has captured the color \n2. You can also turn on the \"Voice Over\" or the \"Speech Controller\" to interact with the app \n3. To have better results, make sure that you use the app in a very well lit environment \n4. Make sure to have the object to be detected at a reasonable distance from the phone" = "
+١.  تاكد ان الجوال ليس على الصامت لسماع الصوت عندما يحدد التطبيق اللون\n\n ٢.  يمكنك استخدام ميزة 'وحدة التحكم بالنطق' او 'Voice Over' للتحكم بالتطبيق\n\n ٣. للحصول على نتائج افضل، تاكد ان الاضاءة ممتازة عند استخدام التطبيق\n\n
+٤. تاكد ان يكون الجوال يبعد مسافة مناسبة من الشيء المراد تحديده"
 ;
     //Enjoy
         //Title
@@ -101,7 +102,7 @@
 "meadow"                  = "تركواز";
 "pantone turquoise"       = "تركواز";
 "capri"                   = "تركواز";
-"aquamarine"             = "تركواز";
+"aquamarine"              = "أزرق فاتح";
 "spa"                     = "تركواز";
 "oasis"                   = "أزرق";
 "niagara"                 = "أزرق";
@@ -109,7 +110,7 @@
 "peacock"                 = "أزرق";
 "ocean blue"              = "أزرق";
 "caspian"                 = "أزرق";
-"seaside"                 = "تركواز";
+"seaside"                 = "أزرق فاتح";
 "marine"                  = "أزرق";
 "mosaic"                  = "أزرق";
 "light blue"              = "أزرق فاتح";
@@ -221,7 +222,7 @@
 "carnation"               = "وردي";
 "rosebud"                 = "ليلكي";
 "hot pink"                = "وردي";
-"pantone honeysuckle"     = "وردي";
+"pantone honeysuckle"     = "أرجواني";
 "pretty in pink"          = "وردي";
 "fuchsia"                 = "وردي";
 "american beauty"         = "أرجواني";
@@ -285,7 +286,7 @@
 "dark beige"              = "بني";
 "medium rose-beige"       = "بيج-وردي";
 "medium brown"            = "بني";
-"medium beige"            = "بيج";
+"medium beige"            = "أصفر";
 
 "dark grey"               = "رمادي غامق";
 "mocha"                   = "رمادي غامق";

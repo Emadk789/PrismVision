@@ -78,8 +78,6 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
             let vc = TutorialViewController()
             present(vc, animated: true, completion: nil)
         }
-        let vc = TutorialViewController()
-        present(vc, animated: true, completion: nil)
     }
     private func isLaunchBefore() -> Bool {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -215,9 +213,9 @@ class HomeViewController: HomeAndImagePickerSuperViewController, AVCapturePhotoC
         self.seperatorLabel.isHidden = false
         
         colorPrivewImageView.backgroundColor = closestPaletteColorHTMLCode
-        forTesting.isHidden = false
-        forTestingActualColor.isHidden = false
-        forTestingActualColor.text = "Actual Detected Color: \(imaggaParentColor2)"
+//        forTesting.isHidden = false
+//        forTestingActualColor.isHidden = false
+//        forTestingActualColor.text = "Actual Detected Color: \(imaggaParentColor2)"
     }
 }
 
