@@ -16,9 +16,15 @@ class TempViewController: UIViewController {
     var pointerVerticalConstranit: NSLayoutConstraint?;
     var pointerNewTopConstranit: NSLayoutConstraint?;
     var pointerNewleftConstranit: NSLayoutConstraint?;
+    
+    let pickerView: UIImagePickerController = {
+        let pikerView = UIImagePickerController();
+        pikerView.sourceType = .photoLibrary;
+        return pikerView;
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pickerView.delegate = self
         // Do any additional setup after loading the view.
         setUpPointer(pointer)
     }
@@ -45,5 +51,25 @@ class TempViewController: UIViewController {
 //        }
         sender.setTranslation(.zero, in: view)
     }
-
+    
+    
+    @IBAction func AlbumButtonClicked(_ sender: Any) {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) == true else { return }
+        pickerView.allowsEditing = true
+        present(pickerView, animated: true, completion: nil);
+    }
+    
 }
+
+extension TempViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: nil);
+
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        let vc = storyboard?.instantiateViewController(identifier: "ImagePreview") as! ImagePickerPhotoPreviewController;
+
+        vc.image = image;
+        present(vc, animated: true);
+    }
+}
+
